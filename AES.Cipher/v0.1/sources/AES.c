@@ -1566,13 +1566,14 @@ API void aes_256_decipher(
 
 #	include <Z/ABIs/generic/cipher.h>
 
-	static zcharacter const copyright[] =
-		"2002 Dr. Brian Gladman\n"
-		"Alexander Kjeldaas\n"
-		"Herbert Valerio Riedel\n"
-		"Kyle McMartin\n"
-		"Adam J. Richter\n"
-		"2011-2016 Manuel Sainz de Baranda y Goñi\n";
+	static zcharacter const information[] =
+		"C2002 Dr. Brian Gladman\n"
+		"CAlexander Kjeldaas\n"
+		"CHerbert Valerio Riedel\n"
+		"CKyle McMartin\n"
+		"CAdam J. Richter\n"
+		"C2011-2016 Manuel Sainz de Baranda y Goñi\n"
+		"LLGPLv3";
 
 	static ZCipherABI const abi_aes_128 = {
 		/* test_key		 */ NULL,
@@ -1623,9 +1624,9 @@ API void aes_256_decipher(
 	};
 
 	static ZModuleUnit const units[] = {
-		{"AES-128", Z_VERSION(1, 0, 0), copyright, &abi_aes_128},
-		{"AES-192", Z_VERSION(1, 0, 0), copyright, &abi_aes_192},
-		{"AES-256", Z_VERSION(1, 0, 0), copyright, &abi_aes_256}
+		{"AES-128", Z_VERSION(1, 0, 0), information, &abi_aes_128},
+		{"AES-192", Z_VERSION(1, 0, 0), information, &abi_aes_192},
+		{"AES-256", Z_VERSION(1, 0, 0), information, &abi_aes_256}
 	};
 
 	static ZModuleDomain const domain = {"cipher", Z_VERSION(1, 0, 0), 3, units};
