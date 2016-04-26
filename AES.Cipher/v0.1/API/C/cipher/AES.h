@@ -42,7 +42,7 @@ Released under the terms of the GNU Lesser General Public License v3. */
 #ifndef __cipher_AES_H__
 #define __cipher_AES_H__
 
-#include <Z/ABIs/generic/module.h>
+#include <Z/ABIs/generic/cipher.h>
 
 #define AES_128_KEY_SIZE 16
 #define AES_192_KEY_SIZE 24
@@ -64,19 +64,29 @@ typedef struct {
 	zuint32 d[60];
 } AES256;
 
+Z_C_SYMBOLS_BEGIN
+
+#ifndef CIPHER_AES_ABI
+#	ifdef CIPHER_AES_AS_STATIC
+#		define CIPHER_AES_ABI
+#	else
+#		define CIPHER_AES_ABI Z_API
+#	endif
+#endif
+
+CIPHER_AES_ABI extern ZCipherABI const abi_cipher_aes_128;
+CIPHER_AES_ABI extern ZCipherABI const abi_cipher_aes_192;
+CIPHER_AES_ABI extern ZCipherABI const abi_cipher_aes_256;
+
 #ifndef CIPHER_AES_OMIT_FUNCTION_PROTOTYPES
 
 #	ifndef CIPHER_AES_API
-#		ifdef CIPHER_AES_USE_STATIC
+#		ifdef CIPHER_AES_AS_STATIC
 #			define CIPHER_AES_API
 #		else
 #			define CIPHER_AES_API Z_API
 #		endif
 #	endif
-
-	Z_C_SYMBOLS_BEGIN
-
-	CIPHER_AES_API extern ZModuleABI const AES_abi;
 
 	CIPHER_AES_API void aes_128_set_key  (AES128*	  object,
 					      void const* key,
@@ -120,8 +130,8 @@ typedef struct {
 					      zsize	  block_size,
 					      void*	  output);
 
-	Z_C_SYMBOLS_END
-
 #endif
+
+Z_C_SYMBOLS_END
 
 #endif /* __cipher_AES_H__ */

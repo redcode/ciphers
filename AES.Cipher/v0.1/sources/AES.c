@@ -39,6 +39,22 @@ Copyright © Adam J. Richter.
 Copyright © 2011-2015 Manuel Sainz de Baranda y Goñi.
 Released under the terms of the GNU Lesser General Public License v3. */
 
+#if defined(CIPHER_AES_HIDE_API)
+#	define CIPHER_AES_API static
+#elif defined(CIPHER_AES_AS_DYNAMIC)
+#	define CIPHER_AES_API Z_API_EXPORT
+#else
+#	define CIPHER_AES_API
+#endif
+
+#if defined(CIPHER_AES_HIDE_ABI)
+#	define CIPHER_AES_ABI static
+#elif defined(CIPHER_AES_AS_DYNAMIC)
+#	define CIPHER_AES_ABI Z_API_EXPORT
+#else
+#	define CIPHER_AES_ABI
+#endif
+
 #define CIPHER_AES_OMIT_FUNCTION_PROTOTYPES
 
 #ifdef CIPHER_AES_USE_LOCAL_HEADER
@@ -48,12 +64,6 @@ Released under the terms of the GNU Lesser General Public License v3. */
 #endif
 
 #include <Z/functions/base/value.h>
-
-#ifdef CIPHER_AES_BUILDING_DYNAMIC
-#	define API Z_API_EXPORT
-#else
-#	define API
-#endif
 
 #define C(value) Z_UINT32(0x##value)
 
@@ -1141,7 +1151,7 @@ Z_INLINE zuint8 byte(const zuint32 x, const zuint n)
 	fl[2][byte(t, 2)] ^ fl[3][byte(t, 3)]
 
 
-API void aes_128_set_key(AES128 *object, zuint32 const *key, zsize key_size)
+CIPHER_AES_API void aes_128_set_key(AES128 *object, zuint32 const *key, zsize key_size)
 	{
 	zuint32 i, t, u, v, w, j, *e = object->e, *d = object->d;
 
@@ -1175,7 +1185,7 @@ API void aes_128_set_key(AES128 *object, zuint32 const *key, zsize key_size)
 	}
 
 
-API void aes_192_set_key(AES192 *object, zuint32 const *key, zsize key_size)
+CIPHER_AES_API void aes_192_set_key(AES192 *object, zuint32 const *key, zsize key_size)
 	{
 	zuint32 i, t, u, v, w, j, *e = object->e, *d = object->d;
 
@@ -1221,7 +1231,7 @@ API void aes_192_set_key(AES192 *object, zuint32 const *key, zsize key_size)
 	t ^= e[8 * i + 3]; e[8 * i + 11] = t;
 
 
-API void aes_256_set_key(AES256 *object, zuint32 const *key, zsize key_size)
+CIPHER_AES_API void aes_256_set_key(AES256 *object, zuint32 const *key, zsize key_size)
 	{
 	zuint32 i, t, u, v, w, j, *e = object->e, *d = object->d;
 
@@ -1285,7 +1295,7 @@ API void aes_256_set_key(AES256 *object, zuint32 const *key, zsize key_size)
 	LAST_STEP(bo, bi, 3);
 
 
-API void aes_128_encipher(
+CIPHER_AES_API void aes_128_encipher(
 	AES128*	       object,
 	zuint32 const* block,
 	zsize	       block_size,
@@ -1324,7 +1334,7 @@ API void aes_128_encipher(
 	}
 
 
-API void aes_192_encipher(
+CIPHER_AES_API void aes_192_encipher(
 	AES192*	       object,
 	zuint32 const* block,
 	zsize	       block_size,
@@ -1365,7 +1375,7 @@ API void aes_192_encipher(
 	}
 
 
-API void aes_256_encipher(
+CIPHER_AES_API void aes_256_encipher(
 	AES256*	       object,
 	zuint32 const* block,
 	zsize	       block_size,
@@ -1439,7 +1449,7 @@ API void aes_256_encipher(
 	LAST_STEP(bo, bi, 3);
 
 
-API void aes_128_decipher(
+CIPHER_AES_API void aes_128_decipher(
 	AES128*	       object,
 	zuint32 const* block,
 	zsize	       block_size,
@@ -1478,7 +1488,7 @@ API void aes_128_decipher(
 	}
 
 
-API void aes_192_decipher(
+CIPHER_AES_API void aes_192_decipher(
 	AES192*	       object,
 	zuint32 const* block,
 	zsize	       block_size,
@@ -1519,7 +1529,7 @@ API void aes_192_decipher(
 	}
 
 
-API void aes_256_decipher(
+CIPHER_AES_API void aes_256_decipher(
 	AES256*	       object,
 	zuint32 const* block,
 	zsize	       block_size,
@@ -1562,9 +1572,61 @@ API void aes_256_decipher(
 	}
 
 
-#ifdef CIPHER_AES_BUILDING_MODULE
+#if defined(CIPHER_AES_BUILD_ABI) || defined(CIPHER_AES_BUILD_MODULE_ABI)
 
-#	include <Z/ABIs/generic/cipher.h>
+	CIPHER_AES_ABI ZCipherABI const abi_cipher_aes_128 = {
+		/* test_key		 */ NULL,
+		/* set_key		 */ (ZCipherSetKey )aes_128_set_key,
+		/* encipher		 */ (ZCipherProcess)aes_128_encipher,
+		/* decipher		 */ (ZCipherProcess)aes_128_decipher,
+		/* enciphering_size	 */ NULL,
+		/* deciphering_size	 */ NULL,
+		/* instance_size	 */ sizeof(AES128),
+		/* key_minimum_size	 */ AES_128_KEY_SIZE,
+		/* key_maximum_size	 */ AES_128_KEY_SIZE,
+		/* key_word_size	 */ AES_128_KEY_SIZE,
+		/* enciphering_word_size */ AES_WORD_SIZE,
+		/* deciphering_word_size */ AES_WORD_SIZE,
+		/* features		 */ FALSE
+	};
+
+	CIPHER_AES_ABI ZCipherABI const abi_cipher_aes_192 = {
+		/* test_key		 */ NULL,
+		/* set_key		 */ (ZCipherSetKey )aes_192_set_key,
+		/* encipher		 */ (ZCipherProcess)aes_192_encipher,
+		/* decipher		 */ (ZCipherProcess)aes_192_decipher,
+		/* enciphering_size	 */ NULL,
+		/* deciphering_size	 */ NULL,
+		/* instance_size	 */ sizeof(AES192),
+		/* key_minimum_size	 */ AES_192_KEY_SIZE,
+		/* key_maximum_size	 */ AES_192_KEY_SIZE,
+		/* key_word_size	 */ AES_192_KEY_SIZE,
+		/* enciphering_word_size */ AES_WORD_SIZE,
+		/* deciphering_word_size */ AES_WORD_SIZE,
+		/* features		 */ FALSE
+	};
+
+	CIPHER_AES_ABI ZCipherABI const abi_cipher_aes_256 = {
+		/* test_key		 */ NULL,
+		/* set_key		 */ (ZCipherSetKey )aes_256_set_key,
+		/* encipher		 */ (ZCipherProcess)aes_256_encipher,
+		/* decipher		 */ (ZCipherProcess)aes_256_decipher,
+		/* enciphering_size	 */ NULL,
+		/* deciphering_size	 */ NULL,
+		/* instance_size	 */ sizeof(AES256),
+		/* key_minimum_size	 */ AES_256_KEY_SIZE,
+		/* key_maximum_size	 */ AES_256_KEY_SIZE,
+		/* key_word_size	 */ AES_256_KEY_SIZE,
+		/* enciphering_word_size */ AES_WORD_SIZE,
+		/* deciphering_word_size */ AES_WORD_SIZE,
+		/* features		 */ FALSE
+	};
+
+#endif
+
+#ifdef CIPHER_AES_BUILD_MODULE_ABI
+
+#	include <Z/ABIs/generic/module.h>
 
 	static zcharacter const information[] =
 		"C2002 Dr. Brian Gladman\n"
@@ -1575,63 +1637,14 @@ API void aes_256_decipher(
 		"C2011-2016 Manuel Sainz de Baranda y Goñi\n"
 		"LLGPLv3";
 
-	static ZCipherABI const abi_aes_128 = {
-		/* test_key		 */ NULL,
-		/* set_key		 */ (ZCipherSetKey )aes_128_set_key,
-		/* encipher		 */ (ZCipherProcess)aes_128_encipher,
-		/* decipher		 */ (ZCipherProcess)aes_128_decipher,
-		/* enciphering_size	 */ NULL,
-		/* deciphering_size	 */ NULL,
-		/* context_size		 */ sizeof(AES128),
-		/* key_minimum_size	 */ AES_128_KEY_SIZE,
-		/* key_maximum_size	 */ AES_128_KEY_SIZE,
-		/* key_word_size	 */ AES_128_KEY_SIZE,
-		/* enciphering_word_size */ AES_WORD_SIZE,
-		/* deciphering_word_size */ AES_WORD_SIZE,
-		/* features		 */ FALSE
-	};
-
-	static ZCipherABI const abi_aes_192 = {
-		/* test_key		 */ NULL,
-		/* set_key		 */ (ZCipherSetKey )aes_192_set_key,
-		/* encipher		 */ (ZCipherProcess)aes_192_encipher,
-		/* decipher		 */ (ZCipherProcess)aes_192_decipher,
-		/* enciphering_size	 */ NULL,
-		/* deciphering_size	 */ NULL,
-		/* context_size		 */ sizeof(AES192),
-		/* key_minimum_size	 */ AES_192_KEY_SIZE,
-		/* key_maximum_size	 */ AES_192_KEY_SIZE,
-		/* key_word_size	 */ AES_192_KEY_SIZE,
-		/* enciphering_word_size */ AES_WORD_SIZE,
-		/* deciphering_word_size */ AES_WORD_SIZE,
-		/* features		 */ FALSE
-	};
-
-	static ZCipherABI const abi_aes_256 = {
-		/* test_key		 */ NULL,
-		/* set_key		 */ (ZCipherSetKey )aes_256_set_key,
-		/* encipher		 */ (ZCipherProcess)aes_256_encipher,
-		/* decipher		 */ (ZCipherProcess)aes_256_decipher,
-		/* enciphering_size	 */ NULL,
-		/* deciphering_size	 */ NULL,
-		/* context_size		 */ sizeof(AES256),
-		/* key_minimum_size	 */ AES_256_KEY_SIZE,
-		/* key_maximum_size	 */ AES_256_KEY_SIZE,
-		/* key_word_size	 */ AES_256_KEY_SIZE,
-		/* enciphering_word_size */ AES_WORD_SIZE,
-		/* deciphering_word_size */ AES_WORD_SIZE,
-		/* features		 */ FALSE
-	};
-
 	static ZModuleUnit const units[] = {
-		{"AES-128", Z_VERSION(1, 0, 0), information, &abi_aes_128},
-		{"AES-192", Z_VERSION(1, 0, 0), information, &abi_aes_192},
-		{"AES-256", Z_VERSION(1, 0, 0), information, &abi_aes_256}
+		{"AES-128", Z_VERSION(1, 0, 0), information, &abi_cipher_aes_128},
+		{"AES-192", Z_VERSION(1, 0, 0), information, &abi_cipher_aes_192},
+		{"AES-256", Z_VERSION(1, 0, 0), information, &abi_cipher_aes_256}
 	};
 
 	static ZModuleDomain const domain = {"cipher", Z_VERSION(1, 0, 0), 3, units};
-
-	API ZModuleABI const AES_abi = {1, &domain};
+	Z_API_WEAK_EXPORT ZModuleABI const __module_abi__ = {1, &domain};
 
 #endif
 
