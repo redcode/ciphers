@@ -7,26 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6428A5751AAFC6DF00634F5D /* AES.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* AES.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6428A5771AAFC72900634F5D /* AES.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* AES.c */; settings = {COMPILER_FLAGS = "-DCIPHER_AES_AS_DYNAMIC"; }; };
-		6428A5801AAFEF1D00634F5D /* AES.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* AES.c */; };
-		643EDF341CCFEC6900E8E086 /* AES.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* AES.c */; settings = {COMPILER_FLAGS = "-DCIPHER_AES_AS_DYNAMIC -DCIPHER_AES_BUILD_ABI"; }; };
-		643EDF371CCFEC6900E8E086 /* AES.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* AES.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		643EDF3E1CCFECA100E8E086 /* AES.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* AES.c */; settings = {COMPILER_FLAGS = "-DCIPHER_AES_BUILD_ABI"; }; };
-		643EDF471CCFECA300E8E086 /* AES.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* AES.c */; settings = {COMPILER_FLAGS = "-DCIPHER_AES_BUILD_ABI -DCIPHER_AES_HIDE_API"; }; };
-		648C139B1CCB921500C8DCE1 /* AES.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* AES.c */; settings = {COMPILER_FLAGS = "-DCIPHER_AES_AS_DYNAMIC -DCIPHER_AES_BUILD_MODULE_ABI"; }; };
-		648C139E1CCB921500C8DCE1 /* AES.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* AES.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6428A5751AAFC6DF00634F5D /* Anubis.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* Anubis.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6428A5771AAFC72900634F5D /* Anubis.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* Anubis.c */; settings = {COMPILER_FLAGS = "-DCIPHER_ANUBIS_AS_DYNAMIC"; }; };
+		6428A5801AAFEF1D00634F5D /* Anubis.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* Anubis.c */; };
+		648C13A51CCC7DAA00C8DCE1 /* Anubis.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* Anubis.c */; settings = {COMPILER_FLAGS = "-DCIPHER_ANUBIS_AS_DYNAMIC -DCIPHER_ANUBIS_BUILD_MODULE_ABI"; }; };
+		648C13A81CCC7DAA00C8DCE1 /* Anubis.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* Anubis.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		64A705CF1CD09A85002E9B99 /* Anubis.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* Anubis.c */; settings = {COMPILER_FLAGS = "-DCIPHER_ANUBIS_AS_DYNAMIC -DCIPHER_ANUBIS_BUILD_ABI"; }; };
+		64A705D21CD09A85002E9B99 /* Anubis.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* Anubis.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		64A705D91CD09AA7002E9B99 /* Anubis.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* Anubis.c */; settings = {COMPILER_FLAGS = "-DCIPHER_ANUBIS_BUILD_ABI"; }; };
+		64A705E21CD09AA9002E9B99 /* Anubis.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* Anubis.c */; settings = {COMPILER_FLAGS = "-DCIPHER_ANUBIS_BUILD_ABI -DCIPHER_ANUBIS_HIDE_API"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6428A5691AAFC68700634F5D /* libAESCipher.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libAESCipher.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		6428A5741AAFC6DF00634F5D /* AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AES.h; sourceTree = "<group>"; };
-		6428A5761AAFC72900634F5D /* AES.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = AES.c; sourceTree = "<group>"; };
-		6428A57C1AAFEDED00634F5D /* libAESCipher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAESCipher.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		643EDF3B1CCFEC6900E8E086 /* libAESCipher.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libAESCipher.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		643EDF441CCFECA100E8E086 /* libAESCipher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAESCipher.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		643EDF4D1CCFECA300E8E086 /* libAESCipher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAESCipher.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		648C13A21CCB921500C8DCE1 /* AES.Cipher */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = AES.Cipher; sourceTree = BUILT_PRODUCTS_DIR; };
+		6428A5691AAFC68700634F5D /* libAnubisCipher.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libAnubisCipher.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		6428A5741AAFC6DF00634F5D /* Anubis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Anubis.h; sourceTree = "<group>"; };
+		6428A5761AAFC72900634F5D /* Anubis.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Anubis.c; sourceTree = "<group>"; };
+		6428A57C1AAFEDED00634F5D /* libAnubisCipher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAnubisCipher.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		648C13AC1CCC7DAA00C8DCE1 /* Anubis.Cipher */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = Anubis.Cipher; sourceTree = BUILT_PRODUCTS_DIR; };
+		64A705D61CD09A85002E9B99 /* libAnubisCipher.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libAnubisCipher.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		64A705DF1CD09AA7002E9B99 /* libAnubisCipher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAnubisCipher.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		64A705E81CD09AA9002E9B99 /* libAnubisCipher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAnubisCipher.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,28 +44,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		643EDF351CCFEC6900E8E086 /* Frameworks */ = {
+		648C13A61CCC7DAA00C8DCE1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		643EDF3F1CCFECA100E8E086 /* Frameworks */ = {
+		64A705D01CD09A85002E9B99 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		643EDF481CCFECA300E8E086 /* Frameworks */ = {
+		64A705DA1CD09AA7002E9B99 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		648C139C1CCB921500C8DCE1 /* Frameworks */ = {
+		64A705E31CD09AA9002E9B99 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -87,12 +87,12 @@
 		6428A56A1AAFC68700634F5D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6428A5691AAFC68700634F5D /* libAESCipher.dylib */,
-				6428A57C1AAFEDED00634F5D /* libAESCipher.a */,
-				648C13A21CCB921500C8DCE1 /* AES.Cipher */,
-				643EDF3B1CCFEC6900E8E086 /* libAESCipher.dylib */,
-				643EDF441CCFECA100E8E086 /* libAESCipher.a */,
-				643EDF4D1CCFECA300E8E086 /* libAESCipher.a */,
+				6428A5691AAFC68700634F5D /* libAnubisCipher.dylib */,
+				6428A57C1AAFEDED00634F5D /* libAnubisCipher.a */,
+				648C13AC1CCC7DAA00C8DCE1 /* Anubis.Cipher */,
+				64A705D61CD09A85002E9B99 /* libAnubisCipher.dylib */,
+				64A705DF1CD09AA7002E9B99 /* libAnubisCipher.a */,
+				64A705E81CD09AA9002E9B99 /* libAnubisCipher.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,7 +100,7 @@
 		6428A5701AAFC69100634F5D /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				6428A5761AAFC72900634F5D /* AES.c */,
+				6428A5761AAFC72900634F5D /* Anubis.c */,
 			);
 			name = Sources;
 			path = ../../sources;
@@ -109,7 +109,7 @@
 		6428A5711AAFC69A00634F5D /* API */ = {
 			isa = PBXGroup;
 			children = (
-				6428A5741AAFC6DF00634F5D /* AES.h */,
+				6428A5741AAFC6DF00634F5D /* Anubis.h */,
 			);
 			name = API;
 			path = ../../API/C/cipher;
@@ -122,7 +122,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6428A5751AAFC6DF00634F5D /* AES.h in Headers */,
+				6428A5751AAFC6DF00634F5D /* Anubis.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,42 +133,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		643EDF361CCFEC6900E8E086 /* Headers */ = {
+		648C13A71CCC7DAA00C8DCE1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				643EDF371CCFEC6900E8E086 /* AES.h in Headers */,
+				648C13A81CCC7DAA00C8DCE1 /* Anubis.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		643EDF401CCFECA100E8E086 /* Headers */ = {
+		64A705D11CD09A85002E9B99 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64A705D21CD09A85002E9B99 /* Anubis.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64A705DB1CD09AA7002E9B99 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		643EDF491CCFECA300E8E086 /* Headers */ = {
+		64A705E41CD09AA9002E9B99 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		648C139D1CCB921500C8DCE1 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				648C139E1CCB921500C8DCE1 /* AES.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6428A5681AAFC68700634F5D /* AESCipher (dynamic) */ = {
+		6428A5681AAFC68700634F5D /* AnubisCipher (dynamic) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6428A56D1AAFC68700634F5D /* Build configuration list for PBXNativeTarget "AESCipher (dynamic)" */;
+			buildConfigurationList = 6428A56D1AAFC68700634F5D /* Build configuration list for PBXNativeTarget "AnubisCipher (dynamic)" */;
 			buildPhases = (
 				6428A5651AAFC68700634F5D /* Sources */,
 				6428A5661AAFC68700634F5D /* Frameworks */,
@@ -178,14 +178,14 @@
 			);
 			dependencies = (
 			);
-			name = "AESCipher (dynamic)";
+			name = "AnubisCipher (dynamic)";
 			productName = Z80;
-			productReference = 6428A5691AAFC68700634F5D /* libAESCipher.dylib */;
+			productReference = 6428A5691AAFC68700634F5D /* libAnubisCipher.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
-		6428A57B1AAFEDED00634F5D /* AESCipher (static) */ = {
+		6428A57B1AAFEDED00634F5D /* AnubisCipher (static) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6428A57D1AAFEDED00634F5D /* Build configuration list for PBXNativeTarget "AESCipher (static)" */;
+			buildConfigurationList = 6428A57D1AAFEDED00634F5D /* Build configuration list for PBXNativeTarget "AnubisCipher (static)" */;
 			buildPhases = (
 				6428A5781AAFEDED00634F5D /* Sources */,
 				6428A5791AAFEDED00634F5D /* Frameworks */,
@@ -195,78 +195,78 @@
 			);
 			dependencies = (
 			);
-			name = "AESCipher (static)";
+			name = "AnubisCipher (static)";
 			productName = "Z80-Static";
-			productReference = 6428A57C1AAFEDED00634F5D /* libAESCipher.a */;
+			productReference = 6428A57C1AAFEDED00634F5D /* libAnubisCipher.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		643EDF321CCFEC6900E8E086 /* AESCipher (dynamic +ABI) */ = {
+		648C13A31CCC7DAA00C8DCE1 /* AnubisCipher (module) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 643EDF381CCFEC6900E8E086 /* Build configuration list for PBXNativeTarget "AESCipher (dynamic +ABI)" */;
+			buildConfigurationList = 648C13A91CCC7DAA00C8DCE1 /* Build configuration list for PBXNativeTarget "AnubisCipher (module)" */;
 			buildPhases = (
-				643EDF331CCFEC6900E8E086 /* Sources */,
-				643EDF351CCFEC6900E8E086 /* Frameworks */,
-				643EDF361CCFEC6900E8E086 /* Headers */,
+				648C13A41CCC7DAA00C8DCE1 /* Sources */,
+				648C13A61CCC7DAA00C8DCE1 /* Frameworks */,
+				648C13A71CCC7DAA00C8DCE1 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "AESCipher (dynamic +ABI)";
+			name = "AnubisCipher (module)";
 			productName = Z80;
-			productReference = 643EDF3B1CCFEC6900E8E086 /* libAESCipher.dylib */;
+			productReference = 648C13AC1CCC7DAA00C8DCE1 /* Anubis.Cipher */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
-		643EDF3C1CCFECA100E8E086 /* AESCipher (static +ABI) */ = {
+		64A705CD1CD09A85002E9B99 /* AnubisCipher (dynamic +ABI) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 643EDF411CCFECA100E8E086 /* Build configuration list for PBXNativeTarget "AESCipher (static +ABI)" */;
+			buildConfigurationList = 64A705D31CD09A85002E9B99 /* Build configuration list for PBXNativeTarget "AnubisCipher (dynamic +ABI)" */;
 			buildPhases = (
-				643EDF3D1CCFECA100E8E086 /* Sources */,
-				643EDF3F1CCFECA100E8E086 /* Frameworks */,
-				643EDF401CCFECA100E8E086 /* Headers */,
+				64A705CE1CD09A85002E9B99 /* Sources */,
+				64A705D01CD09A85002E9B99 /* Frameworks */,
+				64A705D11CD09A85002E9B99 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "AESCipher (static +ABI)";
-			productName = "Z80-Static";
-			productReference = 643EDF441CCFECA100E8E086 /* libAESCipher.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		643EDF451CCFECA300E8E086 /* AESCipher (static +ABI -API) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 643EDF4A1CCFECA300E8E086 /* Build configuration list for PBXNativeTarget "AESCipher (static +ABI -API)" */;
-			buildPhases = (
-				643EDF461CCFECA300E8E086 /* Sources */,
-				643EDF481CCFECA300E8E086 /* Frameworks */,
-				643EDF491CCFECA300E8E086 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "AESCipher (static +ABI -API)";
-			productName = "Z80-Static";
-			productReference = 643EDF4D1CCFECA300E8E086 /* libAESCipher.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		648C13991CCB921500C8DCE1 /* AESCipher (module) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 648C139F1CCB921500C8DCE1 /* Build configuration list for PBXNativeTarget "AESCipher (module)" */;
-			buildPhases = (
-				648C139A1CCB921500C8DCE1 /* Sources */,
-				648C139C1CCB921500C8DCE1 /* Frameworks */,
-				648C139D1CCB921500C8DCE1 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "AESCipher (module)";
+			name = "AnubisCipher (dynamic +ABI)";
 			productName = Z80;
-			productReference = 648C13A21CCB921500C8DCE1 /* AES.Cipher */;
+			productReference = 64A705D61CD09A85002E9B99 /* libAnubisCipher.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
+		};
+		64A705D71CD09AA7002E9B99 /* AnubisCipher (static +ABI) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64A705DC1CD09AA7002E9B99 /* Build configuration list for PBXNativeTarget "AnubisCipher (static +ABI)" */;
+			buildPhases = (
+				64A705D81CD09AA7002E9B99 /* Sources */,
+				64A705DA1CD09AA7002E9B99 /* Frameworks */,
+				64A705DB1CD09AA7002E9B99 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AnubisCipher (static +ABI)";
+			productName = "Z80-Static";
+			productReference = 64A705DF1CD09AA7002E9B99 /* libAnubisCipher.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		64A705E01CD09AA9002E9B99 /* AnubisCipher (static +ABI -API) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64A705E51CD09AA9002E9B99 /* Build configuration list for PBXNativeTarget "AnubisCipher (static +ABI -API)" */;
+			buildPhases = (
+				64A705E11CD09AA9002E9B99 /* Sources */,
+				64A705E31CD09AA9002E9B99 /* Frameworks */,
+				64A705E41CD09AA9002E9B99 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AnubisCipher (static +ABI -API)";
+			productName = "Z80-Static";
+			productReference = 64A705E81CD09AA9002E9B99 /* libAnubisCipher.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -285,7 +285,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6428A5641AAFC68700634F5D /* Build configuration list for PBXProject "AES Cipher" */;
+			buildConfigurationList = 6428A5641AAFC68700634F5D /* Build configuration list for PBXProject "Anubis Cipher" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -297,12 +297,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6428A5681AAFC68700634F5D /* AESCipher (dynamic) */,
-				643EDF321CCFEC6900E8E086 /* AESCipher (dynamic +ABI) */,
-				648C13991CCB921500C8DCE1 /* AESCipher (module) */,
-				6428A57B1AAFEDED00634F5D /* AESCipher (static) */,
-				643EDF3C1CCFECA100E8E086 /* AESCipher (static +ABI) */,
-				643EDF451CCFECA300E8E086 /* AESCipher (static +ABI -API) */,
+				6428A5681AAFC68700634F5D /* AnubisCipher (dynamic) */,
+				64A705CD1CD09A85002E9B99 /* AnubisCipher (dynamic +ABI) */,
+				648C13A31CCC7DAA00C8DCE1 /* AnubisCipher (module) */,
+				6428A57B1AAFEDED00634F5D /* AnubisCipher (static) */,
+				64A705D71CD09AA7002E9B99 /* AnubisCipher (static +ABI) */,
+				64A705E01CD09AA9002E9B99 /* AnubisCipher (static +ABI -API) */,
 			);
 		};
 /* End PBXProject section */
@@ -312,7 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6428A5771AAFC72900634F5D /* AES.c in Sources */,
+				6428A5771AAFC72900634F5D /* Anubis.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,39 +320,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6428A5801AAFEF1D00634F5D /* AES.c in Sources */,
+				6428A5801AAFEF1D00634F5D /* Anubis.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		643EDF331CCFEC6900E8E086 /* Sources */ = {
+		648C13A41CCC7DAA00C8DCE1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				643EDF341CCFEC6900E8E086 /* AES.c in Sources */,
+				648C13A51CCC7DAA00C8DCE1 /* Anubis.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		643EDF3D1CCFECA100E8E086 /* Sources */ = {
+		64A705CE1CD09A85002E9B99 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				643EDF3E1CCFECA100E8E086 /* AES.c in Sources */,
+				64A705CF1CD09A85002E9B99 /* Anubis.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		643EDF461CCFECA300E8E086 /* Sources */ = {
+		64A705D81CD09AA7002E9B99 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				643EDF471CCFECA300E8E086 /* AES.c in Sources */,
+				64A705D91CD09AA7002E9B99 /* Anubis.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		648C139A1CCB921500C8DCE1 /* Sources */ = {
+		64A705E11CD09AA9002E9B99 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				648C139B1CCB921500C8DCE1 /* AES.c in Sources */,
+				64A705E21CD09AA9002E9B99 /* Anubis.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,7 +399,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_CFLAGS = "";
+				OTHER_CFLAGS = "-fno-stack-protector";
 				STRIP_STYLE = "non-global";
 			};
 			name = Debug;
@@ -439,7 +439,7 @@
 				LLVM_LTO = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_CFLAGS = "";
+				OTHER_CFLAGS = "-fno-stack-protector";
 				STRIP_STYLE = "non-global";
 			};
 			name = Release;
@@ -450,7 +450,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1.0.0;
 				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = AESCipher;
+				PRODUCT_NAME = AnubisCipher;
 				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/cipher;
 			};
 			name = Debug;
@@ -461,7 +461,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1.0.0;
 				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = AESCipher;
+				PRODUCT_NAME = AnubisCipher;
 				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/cipher;
 			};
 			name = Release;
@@ -469,68 +469,18 @@
 		6428A57E1AAFEDED00634F5D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = AESCipher;
+				PRODUCT_NAME = AnubisCipher;
 			};
 			name = Debug;
 		};
 		6428A57F1AAFEDED00634F5D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = AESCipher;
+				PRODUCT_NAME = AnubisCipher;
 			};
 			name = Release;
 		};
-		643EDF391CCFEC6900E8E086 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1.0.0;
-				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = AESCipher;
-				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/cipher;
-			};
-			name = Debug;
-		};
-		643EDF3A1CCFEC6900E8E086 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1.0.0;
-				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = AESCipher;
-				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/cipher;
-			};
-			name = Release;
-		};
-		643EDF421CCFECA100E8E086 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = AESCipher;
-			};
-			name = Debug;
-		};
-		643EDF431CCFECA100E8E086 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = AESCipher;
-			};
-			name = Release;
-		};
-		643EDF4B1CCFECA300E8E086 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = AESCipher;
-			};
-			name = Debug;
-		};
-		643EDF4C1CCFECA300E8E086 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = AESCipher;
-			};
-			name = Release;
-		};
-		648C13A01CCB921500C8DCE1 /* Debug */ = {
+		648C13AA1CCC7DAA00C8DCE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -539,12 +489,12 @@
 				EXECUTABLE_EXTENSION = Cipher;
 				INSTALL_PATH = /usr/local/lib/modules/cipher;
 				LD_DYLIB_INSTALL_NAME = "$(EXECUTABLE_PATH)";
-				PRODUCT_NAME = AES;
+				PRODUCT_NAME = Anubis;
 				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/cipher;
 			};
 			name = Debug;
 		};
-		648C13A11CCB921500C8DCE1 /* Release */ = {
+		648C13AB1CCC7DAA00C8DCE1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -553,15 +503,65 @@
 				EXECUTABLE_EXTENSION = Cipher;
 				INSTALL_PATH = /usr/local/lib/modules/cipher;
 				LD_DYLIB_INSTALL_NAME = "$(EXECUTABLE_PATH)";
-				PRODUCT_NAME = AES;
+				PRODUCT_NAME = Anubis;
 				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/cipher;
+			};
+			name = Release;
+		};
+		64A705D41CD09A85002E9B99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1.0.0;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = AnubisCipher;
+				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/cipher;
+			};
+			name = Debug;
+		};
+		64A705D51CD09A85002E9B99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1.0.0;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = AnubisCipher;
+				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/cipher;
+			};
+			name = Release;
+		};
+		64A705DD1CD09AA7002E9B99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = AnubisCipher;
+			};
+			name = Debug;
+		};
+		64A705DE1CD09AA7002E9B99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = AnubisCipher;
+			};
+			name = Release;
+		};
+		64A705E61CD09AA9002E9B99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = AnubisCipher;
+			};
+			name = Debug;
+		};
+		64A705E71CD09AA9002E9B99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = AnubisCipher;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6428A5641AAFC68700634F5D /* Build configuration list for PBXProject "AES Cipher" */ = {
+		6428A5641AAFC68700634F5D /* Build configuration list for PBXProject "Anubis Cipher" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6428A56B1AAFC68700634F5D /* Debug */,
@@ -570,7 +570,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6428A56D1AAFC68700634F5D /* Build configuration list for PBXNativeTarget "AESCipher (dynamic)" */ = {
+		6428A56D1AAFC68700634F5D /* Build configuration list for PBXNativeTarget "AnubisCipher (dynamic)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6428A56E1AAFC68700634F5D /* Debug */,
@@ -579,7 +579,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6428A57D1AAFEDED00634F5D /* Build configuration list for PBXNativeTarget "AESCipher (static)" */ = {
+		6428A57D1AAFEDED00634F5D /* Build configuration list for PBXNativeTarget "AnubisCipher (static)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6428A57E1AAFEDED00634F5D /* Debug */,
@@ -588,38 +588,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		643EDF381CCFEC6900E8E086 /* Build configuration list for PBXNativeTarget "AESCipher (dynamic +ABI)" */ = {
+		648C13A91CCC7DAA00C8DCE1 /* Build configuration list for PBXNativeTarget "AnubisCipher (module)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				643EDF391CCFEC6900E8E086 /* Debug */,
-				643EDF3A1CCFEC6900E8E086 /* Release */,
+				648C13AA1CCC7DAA00C8DCE1 /* Debug */,
+				648C13AB1CCC7DAA00C8DCE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		643EDF411CCFECA100E8E086 /* Build configuration list for PBXNativeTarget "AESCipher (static +ABI)" */ = {
+		64A705D31CD09A85002E9B99 /* Build configuration list for PBXNativeTarget "AnubisCipher (dynamic +ABI)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				643EDF421CCFECA100E8E086 /* Debug */,
-				643EDF431CCFECA100E8E086 /* Release */,
+				64A705D41CD09A85002E9B99 /* Debug */,
+				64A705D51CD09A85002E9B99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		643EDF4A1CCFECA300E8E086 /* Build configuration list for PBXNativeTarget "AESCipher (static +ABI -API)" */ = {
+		64A705DC1CD09AA7002E9B99 /* Build configuration list for PBXNativeTarget "AnubisCipher (static +ABI)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				643EDF4B1CCFECA300E8E086 /* Debug */,
-				643EDF4C1CCFECA300E8E086 /* Release */,
+				64A705DD1CD09AA7002E9B99 /* Debug */,
+				64A705DE1CD09AA7002E9B99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		648C139F1CCB921500C8DCE1 /* Build configuration list for PBXNativeTarget "AESCipher (module)" */ = {
+		64A705E51CD09AA9002E9B99 /* Build configuration list for PBXNativeTarget "AnubisCipher (static +ABI -API)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				648C13A01CCB921500C8DCE1 /* Debug */,
-				648C13A11CCB921500C8DCE1 /* Release */,
+				64A705E61CD09AA9002E9B99 /* Debug */,
+				64A705E71CD09AA9002E9B99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
