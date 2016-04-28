@@ -26,7 +26,7 @@ Released under the terms of the GNU Lesser General Public License v3. */
 #define CIPHER_ARC4_OMIT_FUNCTION_PROTOTYPES
 
 #ifdef CIPHER_ARC4_USE_LOCAL_HEADER
-#	include "AES.h"
+#	include "ARC4.h"
 #else
 #	include <cipher/ARC4.h>
 #endif
