@@ -217,9 +217,9 @@
 			productReference = 64A7063E1CD14554002E9B99 /* libBlowfishCipher.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
-		64A7063F1CD1455D002E9B99 /* BlowfishCipher (module) */ = {
+		64A7063F1CD1455D002E9B99 /* Blowfish (module) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 64A706451CD1455D002E9B99 /* Build configuration list for PBXNativeTarget "BlowfishCipher (module)" */;
+			buildConfigurationList = 64A706451CD1455D002E9B99 /* Build configuration list for PBXNativeTarget "Blowfish (module)" */;
 			buildPhases = (
 				64A706401CD1455D002E9B99 /* Sources */,
 				64A706421CD1455D002E9B99 /* Frameworks */,
@@ -229,7 +229,7 @@
 			);
 			dependencies = (
 			);
-			name = "BlowfishCipher (module)";
+			name = "Blowfish (module)";
 			productName = Z80;
 			productReference = 64A706481CD1455D002E9B99 /* Blowfish.Cipher */;
 			productType = "com.apple.product-type.library.dynamic";
@@ -299,7 +299,7 @@
 			targets = (
 				6428A5681AAFC68700634F5D /* BlowfishCipher (dynamic) */,
 				64A706351CD14554002E9B99 /* BlowfishCipher (dynamic +ABI) */,
-				64A7063F1CD1455D002E9B99 /* BlowfishCipher (module) */,
+				64A7063F1CD1455D002E9B99 /* Blowfish (module) */,
 				6428A57B1AAFEDED00634F5D /* BlowfishCipher (static) */,
 				64A706491CD14570002E9B99 /* BlowfishCipher (static +ABI) */,
 				64A706521CD1457A002E9B99 /* BlowfishCipher (static +ABI -API) */,
@@ -595,7 +595,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		64A706451CD1455D002E9B99 /* Build configuration list for PBXNativeTarget "BlowfishCipher (module)" */ = {
+		64A706451CD1455D002E9B99 /* Build configuration list for PBXNativeTarget "Blowfish (module)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				64A706461CD1455D002E9B99 /* Debug */,

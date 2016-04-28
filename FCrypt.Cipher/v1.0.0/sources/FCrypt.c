@@ -437,7 +437,7 @@ void f_crypt_decipher(FCrypt *object, Z64Bit const *block, zsize block_size, Z64
 		"FCrypt", Z_VERSION(1, 0, 0), information, &abi_cipher_f_crypt
 	};
 
-	static ZModuleDomain const domain = {"cipher", Z_VERSION(1, 0, 0), 3, &unit};
+	static ZModuleDomain const domain = {"cipher", Z_VERSION(1, 0, 0), 1, &unit};
 	Z_API_WEAK_EXPORT ZModuleABI const __module_abi__ = {1, &domain};
 
 #endif

@@ -251,9 +251,9 @@
 			productReference = 643EDF4D1CCFECA300E8E086 /* libAESCipher.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		648C13991CCB921500C8DCE1 /* AESCipher (module) */ = {
+		648C13991CCB921500C8DCE1 /* AES (module) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 648C139F1CCB921500C8DCE1 /* Build configuration list for PBXNativeTarget "AESCipher (module)" */;
+			buildConfigurationList = 648C139F1CCB921500C8DCE1 /* Build configuration list for PBXNativeTarget "AES (module)" */;
 			buildPhases = (
 				648C139A1CCB921500C8DCE1 /* Sources */,
 				648C139C1CCB921500C8DCE1 /* Frameworks */,
@@ -263,7 +263,7 @@
 			);
 			dependencies = (
 			);
-			name = "AESCipher (module)";
+			name = "AES (module)";
 			productName = Z80;
 			productReference = 648C13A21CCB921500C8DCE1 /* AES.Cipher */;
 			productType = "com.apple.product-type.library.dynamic";
@@ -299,7 +299,7 @@
 			targets = (
 				6428A5681AAFC68700634F5D /* AESCipher (dynamic) */,
 				643EDF321CCFEC6900E8E086 /* AESCipher (dynamic +ABI) */,
-				648C13991CCB921500C8DCE1 /* AESCipher (module) */,
+				648C13991CCB921500C8DCE1 /* AES (module) */,
 				6428A57B1AAFEDED00634F5D /* AESCipher (static) */,
 				643EDF3C1CCFECA100E8E086 /* AESCipher (static +ABI) */,
 				643EDF451CCFECA300E8E086 /* AESCipher (static +ABI -API) */,
@@ -615,7 +615,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		648C139F1CCB921500C8DCE1 /* Build configuration list for PBXNativeTarget "AESCipher (module)" */ = {
+		648C139F1CCB921500C8DCE1 /* Build configuration list for PBXNativeTarget "AES (module)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				648C13A01CCB921500C8DCE1 /* Debug */,

@@ -217,9 +217,9 @@
 			productReference = 64A706651CD2263F002E9B99 /* libFCryptCipher.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
-		64A706661CD22643002E9B99 /* FCryptCipher (module) */ = {
+		64A706661CD22643002E9B99 /* FCrypt (module) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 64A7066C1CD22643002E9B99 /* Build configuration list for PBXNativeTarget "FCryptCipher (module)" */;
+			buildConfigurationList = 64A7066C1CD22643002E9B99 /* Build configuration list for PBXNativeTarget "FCrypt (module)" */;
 			buildPhases = (
 				64A706671CD22643002E9B99 /* Sources */,
 				64A706691CD22643002E9B99 /* Frameworks */,
@@ -229,7 +229,7 @@
 			);
 			dependencies = (
 			);
-			name = "FCryptCipher (module)";
+			name = "FCrypt (module)";
 			productName = Z80;
 			productReference = 64A7066F1CD22643002E9B99 /* FCrypt.Cipher */;
 			productType = "com.apple.product-type.library.dynamic";
@@ -299,7 +299,7 @@
 			targets = (
 				6428A5681AAFC68700634F5D /* FCryptCipher (dynamic) */,
 				64A7065C1CD2263F002E9B99 /* FCryptCipher (dynamic +ABI) */,
-				64A706661CD22643002E9B99 /* FCryptCipher (module) */,
+				64A706661CD22643002E9B99 /* FCrypt (module) */,
 				6428A57B1AAFEDED00634F5D /* FCryptCipher (static) */,
 				64A706701CD22669002E9B99 /* FCryptCipher (static +ABI) */,
 				64A706791CD22674002E9B99 /* FCryptCipher (static +ABI -API) */,
@@ -597,7 +597,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		64A7066C1CD22643002E9B99 /* Build configuration list for PBXNativeTarget "FCryptCipher (module)" */ = {
+		64A7066C1CD22643002E9B99 /* Build configuration list for PBXNativeTarget "FCrypt (module)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				64A7066D1CD22643002E9B99 /* Debug */,

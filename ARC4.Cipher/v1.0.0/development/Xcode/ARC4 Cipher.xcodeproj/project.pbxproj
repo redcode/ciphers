@@ -217,9 +217,9 @@
 			productReference = 64A705F21CD0CBF6002E9B99 /* libARC4Cipher.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
-		64A705F31CD0CBF8002E9B99 /* ARC4Cipher (module) */ = {
+		64A705F31CD0CBF8002E9B99 /* ARC4 (module) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 64A705F91CD0CBF8002E9B99 /* Build configuration list for PBXNativeTarget "ARC4Cipher (module)" */;
+			buildConfigurationList = 64A705F91CD0CBF8002E9B99 /* Build configuration list for PBXNativeTarget "ARC4 (module)" */;
 			buildPhases = (
 				64A705F41CD0CBF8002E9B99 /* Sources */,
 				64A705F61CD0CBF8002E9B99 /* Frameworks */,
@@ -229,7 +229,7 @@
 			);
 			dependencies = (
 			);
-			name = "ARC4Cipher (module)";
+			name = "ARC4 (module)";
 			productName = Z80;
 			productReference = 64A705FC1CD0CBF8002E9B99 /* ARC4.Cipher */;
 			productType = "com.apple.product-type.library.dynamic";
@@ -299,7 +299,7 @@
 			targets = (
 				6428A5681AAFC68700634F5D /* ARC4Cipher (dynamic) */,
 				64A705E91CD0CBF6002E9B99 /* ARC4Cipher (dynamic +ABI) */,
-				64A705F31CD0CBF8002E9B99 /* ARC4Cipher (module) */,
+				64A705F31CD0CBF8002E9B99 /* ARC4 (module) */,
 				6428A57B1AAFEDED00634F5D /* ARC4Cipher (static) */,
 				64A705FD1CD0CC37002E9B99 /* ARC4Cipher (static +ABI) */,
 				64A706061CD0CC3A002E9B99 /* ARC4Cipher (static +ABI -API) */,
@@ -597,7 +597,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		64A705F91CD0CBF8002E9B99 /* Build configuration list for PBXNativeTarget "ARC4Cipher (module)" */ = {
+		64A705F91CD0CBF8002E9B99 /* Build configuration list for PBXNativeTarget "ARC4 (module)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				64A705FA1CD0CBF8002E9B99 /* Debug */,

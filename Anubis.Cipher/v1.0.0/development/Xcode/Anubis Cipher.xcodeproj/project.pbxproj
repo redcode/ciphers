@@ -200,9 +200,9 @@
 			productReference = 6428A57C1AAFEDED00634F5D /* libAnubisCipher.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		648C13A31CCC7DAA00C8DCE1 /* AnubisCipher (module) */ = {
+		648C13A31CCC7DAA00C8DCE1 /* Anubis (module) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 648C13A91CCC7DAA00C8DCE1 /* Build configuration list for PBXNativeTarget "AnubisCipher (module)" */;
+			buildConfigurationList = 648C13A91CCC7DAA00C8DCE1 /* Build configuration list for PBXNativeTarget "Anubis (module)" */;
 			buildPhases = (
 				648C13A41CCC7DAA00C8DCE1 /* Sources */,
 				648C13A61CCC7DAA00C8DCE1 /* Frameworks */,
@@ -212,7 +212,7 @@
 			);
 			dependencies = (
 			);
-			name = "AnubisCipher (module)";
+			name = "Anubis (module)";
 			productName = Z80;
 			productReference = 648C13AC1CCC7DAA00C8DCE1 /* Anubis.Cipher */;
 			productType = "com.apple.product-type.library.dynamic";
@@ -299,7 +299,7 @@
 			targets = (
 				6428A5681AAFC68700634F5D /* AnubisCipher (dynamic) */,
 				64A705CD1CD09A85002E9B99 /* AnubisCipher (dynamic +ABI) */,
-				648C13A31CCC7DAA00C8DCE1 /* AnubisCipher (module) */,
+				648C13A31CCC7DAA00C8DCE1 /* Anubis (module) */,
 				6428A57B1AAFEDED00634F5D /* AnubisCipher (static) */,
 				64A705D71CD09AA7002E9B99 /* AnubisCipher (static +ABI) */,
 				64A705E01CD09AA9002E9B99 /* AnubisCipher (static +ABI -API) */,
@@ -588,7 +588,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		648C13A91CCC7DAA00C8DCE1 /* Build configuration list for PBXNativeTarget "AnubisCipher (module)" */ = {
+		648C13A91CCC7DAA00C8DCE1 /* Build configuration list for PBXNativeTarget "Anubis (module)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				648C13AA1CCC7DAA00C8DCE1 /* Debug */,
