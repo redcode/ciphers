@@ -1,5 +1,5 @@
 # Cipher modules
-Copyright © __TODO: Authors__
+Copyright © __TODO: Authors__  
 Copyright © 2011-2016 Manuel Sainz de Baranda y Goñi.  
 Released under the terms of the [GNU General Public License v3](http://www.gnu.org/copyleft/gpl.html).
 
