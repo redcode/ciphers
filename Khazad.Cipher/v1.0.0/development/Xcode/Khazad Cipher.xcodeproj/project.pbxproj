@@ -16,6 +16,9 @@
 		64A706911CD24965002E9B99 /* Khazad.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* Khazad.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		64A706981CD24ADC002E9B99 /* Khazad.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* Khazad.c */; settings = {COMPILER_FLAGS = "-DCIPHER_KHAZAD_BUILD_ABI"; }; };
 		64A706A11CD24AE2002E9B99 /* Khazad.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* Khazad.c */; settings = {COMPILER_FLAGS = "-DCIPHER_KHAZAD_BUILD_ABI -DCIPHER_KHAZAD_HIDE_API"; }; };
+		64A707061CD293F1002E9B99 /* Khazad.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* Khazad.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		64A707071CD293F2002E9B99 /* Khazad.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* Khazad.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		64A707081CD293F2002E9B99 /* Khazad.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* Khazad.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +133,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64A707061CD293F1002E9B99 /* Khazad.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +157,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64A707071CD293F2002E9B99 /* Khazad.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +165,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64A707081CD293F2002E9B99 /* Khazad.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

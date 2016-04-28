@@ -9,6 +9,22 @@ Copyright © 2004 Jesús García Hernández.
 Copyright © 2011-2016 Manuel Sainz de Baranda y Goñi.
 Released under the terms of the GNU Lesser General Public License v3. */
 
+#if defined(CIPHER_SERPENT_HIDE_API)
+#	define CIPHER_SERPENT_API static
+#elif defined(CIPHER_SERPENT_AS_DYNAMIC)
+#	define CIPHER_SERPENT_API Z_API_EXPORT
+#else
+#	define CIPHER_SERPENT_API
+#endif
+
+#if defined(CIPHER_SERPENT_HIDE_ABI)
+#	define CIPHER_SERPENT_ABI static
+#elif defined(CIPHER_SERPENT_AS_DYNAMIC)
+#	define CIPHER_SERPENT_ABI Z_API_EXPORT
+#else
+#	define CIPHER_SERPENT_ABI
+#endif
+
 #define CIPHER_SERPENT_OMIT_FUNCTION_PROTOTYPES
 
 #ifdef CIPHER_SERPENT_USE_LOCAL_HEADER
@@ -18,12 +34,6 @@ Released under the terms of the GNU Lesser General Public License v3. */
 #endif
 
 #include <Z/functions/base/value.h>
-
-#ifdef CIPHER_SERPENT_BUILDING_DYNAMIC
-#	define API Z_API_EXPORT
-#else
-#	define API
-#endif
 
 #define PHI Z_UINT32(0x9E3779B9)
 #define ROL z_uint32_rotated_left
@@ -210,7 +220,7 @@ Released under the terms of the GNU Lesser General Public License v3. */
 	x4 ^= x2;
 
 
-API void serpent_set_key(Serpent *object, const zuint8 *key, zsize key_size)
+CIPHER_SERPENT_API void serpent_set_key(Serpent *object, const zuint8 *key, zsize key_size)
 	{
 	zuint32 *k = object->k;
 	zuint32 r0, r1, r2, r3, r4;
@@ -417,7 +427,7 @@ API void serpent_set_key(Serpent *object, const zuint8 *key, zsize key_size)
 	}
 
 
-API void serpent_encipher(
+CIPHER_SERPENT_API void serpent_encipher(
 	Serpent*       object,
 	zuint32 const* block,
 	zsize	       block_size,
@@ -476,7 +486,7 @@ API void serpent_encipher(
 	}
 
 
-API void serpent_decipher(
+CIPHER_SERPENT_API void serpent_decipher(
 	Serpent*       object,
 	zuint32 const* block,
 	zsize	       block_size,
@@ -535,23 +545,43 @@ API void serpent_decipher(
 	}
 
 
-#ifdef CIPHER_SERPENT_BUILDING_MODULE
+#if defined(CIPHER_SERPENT_BUILD_ABI) || defined(CIPHER_SERPENT_BUILD_MODULE_ABI)
 
-	API ZCipherABI const abi_cipher_serpent = {
-		/* test_key	       */ NULL,
-		/* set_key	       */ (ZCipherSetKey )serpent_set_key,
-		/* encipher	       */ (ZCipherProcess)serpent_encipher,
-		/* decipher	       */ (ZCipherProcess)serpent_decipher,
-		/* enciphering_size    */ NULL,
-		/* deciphering_size    */ NULL,
-		/* context_size	       */ sizeof(Serpent),
-		/* key_minimum_size    */ SERPENT_KEY_MINIMUM_SIZE,
-		/* key_maximum_size    */ SERPENT_KEY_MAXIMUM_SIZE,
-		/* key_word_size       */ SERPENT_KEY_WORD_SIZE,
-		/* decifered_word_size */ SERPENT_WORD_SIZE,
-		/* encifered_word_size */ SERPENT_WORD_SIZE,
-		/* features	       */ FALSE
+	CIPHER_SERPENT_ABI ZCipherABI const abi_cipher_serpent = {
+		/* test_key		 */ NULL,
+		/* set_key		 */ (ZCipherSetKey )serpent_set_key,
+		/* encipher		 */ (ZCipherProcess)serpent_encipher,
+		/* decipher		 */ (ZCipherProcess)serpent_decipher,
+		/* enciphering_size	 */ NULL,
+		/* deciphering_size	 */ NULL,
+		/* instance_size	 */ sizeof(Serpent),
+		/* key_minimum_size	 */ SERPENT_KEY_MINIMUM_SIZE,
+		/* key_maximum_size	 */ SERPENT_KEY_MAXIMUM_SIZE,
+		/* key_word_size	 */ SERPENT_KEY_WORD_SIZE,
+		/* enciphering_word_size */ SERPENT_WORD_SIZE,
+		/* deciphering_word_size */ SERPENT_WORD_SIZE,
+		/* features		 */ FALSE
 	};
+
+#endif
+
+#ifdef CIPHER_SERPENT_BUILD_MODULE_ABI
+
+#	include <Z/ABIs/generic/module.h>
+
+	static zcharacter const information[] =
+		"C2002 Dag Arne Osvik\n"
+		"C2003 Herbert Valerio Riedel\n"
+		"C2004 Jesús García Hernández\n"
+		"C2011-2016 Manuel Sainz de Baranda y Goñi\n"
+		"LLGPLv3";
+
+	static ZModuleUnit const unit = {
+		"Serpent", Z_VERSION(1, 0, 0), information, &abi_cipher_serpent
+	};
+
+	static ZModuleDomain const domain = {"cipher", Z_VERSION(1, 0, 0), 1, &unit};
+	Z_API_WEAK_EXPORT ZModuleABI const __module_abi__ = {1, &domain};
 
 #endif
 

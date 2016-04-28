@@ -16,6 +16,9 @@
 		64A705F81CD0CBF8002E9B99 /* ARC4.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* ARC4.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		64A705FF1CD0CC37002E9B99 /* ARC4.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* ARC4.c */; settings = {COMPILER_FLAGS = "-DCIPHER_ARC4_BUILD_ABI"; }; };
 		64A706081CD0CC3A002E9B99 /* ARC4.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* ARC4.c */; settings = {COMPILER_FLAGS = "-DCIPHER_ARC4_BUILD_ABI -DCIPHER_ARC4_HIDE_API"; }; };
+		64A706FD1CD2939A002E9B99 /* ARC4.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* ARC4.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		64A706FE1CD2939A002E9B99 /* ARC4.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* ARC4.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		64A706FF1CD2939B002E9B99 /* ARC4.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* ARC4.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +133,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64A706FD1CD2939A002E9B99 /* ARC4.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +157,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64A706FE1CD2939A002E9B99 /* ARC4.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +165,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64A706FF1CD2939B002E9B99 /* ARC4.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,6 +16,9 @@
 		64A706B71CD27303002E9B99 /* SEED.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* SEED.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		64A706BE1CD27319002E9B99 /* SEED.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* SEED.c */; settings = {COMPILER_FLAGS = "-DCIPHER_SEED_BUILD_ABI"; }; };
 		64A706C71CD27322002E9B99 /* SEED.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* SEED.c */; settings = {COMPILER_FLAGS = "-DCIPHER_SEED_BUILD_ABI -DCIPHER_SEED_HIDE_API"; }; };
+		64A707091CD29457002E9B99 /* SEED.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* SEED.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		64A7070A1CD29457002E9B99 /* SEED.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* SEED.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		64A7070B1CD29457002E9B99 /* SEED.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* SEED.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +133,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64A707091CD29457002E9B99 /* SEED.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +157,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64A7070A1CD29457002E9B99 /* SEED.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +165,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64A7070B1CD29457002E9B99 /* SEED.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

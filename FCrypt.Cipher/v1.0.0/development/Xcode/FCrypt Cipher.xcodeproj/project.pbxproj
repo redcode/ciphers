@@ -16,6 +16,9 @@
 		64A7066B1CD22643002E9B99 /* FCrypt.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* FCrypt.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		64A706721CD22669002E9B99 /* FCrypt.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* FCrypt.c */; settings = {COMPILER_FLAGS = "-DCIPHER_F_CRYPT_BUILD_ABI"; }; };
 		64A7067B1CD22674002E9B99 /* FCrypt.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* FCrypt.c */; settings = {COMPILER_FLAGS = "-DCIPHER_F_CRYPT_BUILD_ABI -DCIPHER_F_CRYPT_HIDE_API"; }; };
+		64A707031CD293D8002E9B99 /* FCrypt.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* FCrypt.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		64A707041CD293D8002E9B99 /* FCrypt.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* FCrypt.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		64A707051CD293D9002E9B99 /* FCrypt.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* FCrypt.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +133,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64A707031CD293D8002E9B99 /* FCrypt.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +157,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64A707041CD293D8002E9B99 /* FCrypt.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +165,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64A707051CD293D9002E9B99 /* FCrypt.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

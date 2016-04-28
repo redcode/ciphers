@@ -16,6 +16,9 @@
 		643EDF471CCFECA300E8E086 /* AES.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* AES.c */; settings = {COMPILER_FLAGS = "-DCIPHER_AES_BUILD_ABI -DCIPHER_AES_HIDE_API"; }; };
 		648C139B1CCB921500C8DCE1 /* AES.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* AES.c */; settings = {COMPILER_FLAGS = "-DCIPHER_AES_AS_DYNAMIC -DCIPHER_AES_BUILD_MODULE_ABI"; }; };
 		648C139E1CCB921500C8DCE1 /* AES.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* AES.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		64A706F71CD2936C002E9B99 /* AES.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* AES.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		64A706F81CD2936D002E9B99 /* AES.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* AES.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		64A706F91CD2936D002E9B99 /* AES.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* AES.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +133,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64A706F71CD2936C002E9B99 /* AES.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +149,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64A706F81CD2936D002E9B99 /* AES.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +157,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64A706F91CD2936D002E9B99 /* AES.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

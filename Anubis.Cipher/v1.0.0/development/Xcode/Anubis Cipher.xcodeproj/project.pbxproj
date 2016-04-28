@@ -16,6 +16,9 @@
 		64A705D21CD09A85002E9B99 /* Anubis.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* Anubis.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		64A705D91CD09AA7002E9B99 /* Anubis.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* Anubis.c */; settings = {COMPILER_FLAGS = "-DCIPHER_ANUBIS_BUILD_ABI"; }; };
 		64A705E21CD09AA9002E9B99 /* Anubis.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* Anubis.c */; settings = {COMPILER_FLAGS = "-DCIPHER_ANUBIS_BUILD_ABI -DCIPHER_ANUBIS_HIDE_API"; }; };
+		64A706FA1CD29384002E9B99 /* Anubis.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* Anubis.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		64A706FB1CD29384002E9B99 /* Anubis.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* Anubis.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		64A706FC1CD29384002E9B99 /* Anubis.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* Anubis.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +133,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64A706FA1CD29384002E9B99 /* Anubis.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +157,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64A706FB1CD29384002E9B99 /* Anubis.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +165,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64A706FC1CD29384002E9B99 /* Anubis.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
