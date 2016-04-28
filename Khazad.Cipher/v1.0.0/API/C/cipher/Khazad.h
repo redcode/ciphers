@@ -58,8 +58,8 @@ CIPHER_KHAZAD_ABI extern ZCipherABI const abi_cipher_khazad;
 						zsize	    block_size,
 						void*	    output);
 
-	Z_C_SYMBOLS_END
-
 #endif
+
+Z_C_SYMBOLS_END
 
 #endif /* __cipher_Khazad_H__ */
