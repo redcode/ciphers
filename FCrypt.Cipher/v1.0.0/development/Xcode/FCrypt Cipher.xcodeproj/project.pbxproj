@@ -1,0 +1,630 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6428A5751AAFC6DF00634F5D /* FCrypt.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* FCrypt.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6428A5771AAFC72900634F5D /* FCrypt.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* FCrypt.c */; settings = {COMPILER_FLAGS = "-DCIPHER_F_CRYPT_AS_DYNAMIC"; }; };
+		6428A5801AAFEF1D00634F5D /* FCrypt.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* FCrypt.c */; };
+		64A7065E1CD2263F002E9B99 /* FCrypt.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* FCrypt.c */; settings = {COMPILER_FLAGS = "-DCIPHER_F_CRYPT_AS_DYNAMIC -DCIPHER_F_CRYPT_BUILD_ABI"; }; };
+		64A706611CD2263F002E9B99 /* FCrypt.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* FCrypt.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		64A706681CD22643002E9B99 /* FCrypt.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* FCrypt.c */; settings = {COMPILER_FLAGS = "-DCIPHER_F_CRYPT_AS_DYNAMIC -DCIPHER_F_CRYPT_BUILD_MODULE_ABI"; }; };
+		64A7066B1CD22643002E9B99 /* FCrypt.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* FCrypt.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		64A706721CD22669002E9B99 /* FCrypt.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* FCrypt.c */; settings = {COMPILER_FLAGS = "-DCIPHER_F_CRYPT_BUILD_ABI"; }; };
+		64A7067B1CD22674002E9B99 /* FCrypt.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* FCrypt.c */; settings = {COMPILER_FLAGS = "-DCIPHER_F_CRYPT_BUILD_ABI -DCIPHER_F_CRYPT_HIDE_API"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6428A5691AAFC68700634F5D /* libFCryptCipher.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libFCryptCipher.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		6428A5741AAFC6DF00634F5D /* FCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCrypt.h; sourceTree = "<group>"; };
+		6428A5761AAFC72900634F5D /* FCrypt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = FCrypt.c; sourceTree = "<group>"; };
+		6428A57C1AAFEDED00634F5D /* libFCryptCipher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFCryptCipher.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		64A706651CD2263F002E9B99 /* libFCryptCipher.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libFCryptCipher.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		64A7066F1CD22643002E9B99 /* FCrypt.Cipher */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = FCrypt.Cipher; sourceTree = BUILT_PRODUCTS_DIR; };
+		64A706781CD22669002E9B99 /* libFCryptCipher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFCryptCipher.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		64A706811CD22674002E9B99 /* libFCryptCipher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFCryptCipher.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6428A5661AAFC68700634F5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6428A5791AAFEDED00634F5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64A7065F1CD2263F002E9B99 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64A706691CD22643002E9B99 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64A706731CD22669002E9B99 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64A7067C1CD22674002E9B99 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6428A5601AAFC68700634F5D = {
+			isa = PBXGroup;
+			children = (
+				6428A5711AAFC69A00634F5D /* API */,
+				6428A5701AAFC69100634F5D /* Sources */,
+				6428A56A1AAFC68700634F5D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6428A56A1AAFC68700634F5D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6428A5691AAFC68700634F5D /* libFCryptCipher.dylib */,
+				6428A57C1AAFEDED00634F5D /* libFCryptCipher.a */,
+				64A706651CD2263F002E9B99 /* libFCryptCipher.dylib */,
+				64A7066F1CD22643002E9B99 /* FCrypt.Cipher */,
+				64A706781CD22669002E9B99 /* libFCryptCipher.a */,
+				64A706811CD22674002E9B99 /* libFCryptCipher.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6428A5701AAFC69100634F5D /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				6428A5761AAFC72900634F5D /* FCrypt.c */,
+			);
+			name = Sources;
+			path = ../../sources;
+			sourceTree = "<group>";
+		};
+		6428A5711AAFC69A00634F5D /* API */ = {
+			isa = PBXGroup;
+			children = (
+				6428A5741AAFC6DF00634F5D /* FCrypt.h */,
+			);
+			name = API;
+			path = ../../API/C/cipher;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		6428A5671AAFC68700634F5D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6428A5751AAFC6DF00634F5D /* FCrypt.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6428A57A1AAFEDED00634F5D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64A706601CD2263F002E9B99 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64A706611CD2263F002E9B99 /* FCrypt.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64A7066A1CD22643002E9B99 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64A7066B1CD22643002E9B99 /* FCrypt.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64A706741CD22669002E9B99 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64A7067D1CD22674002E9B99 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		6428A5681AAFC68700634F5D /* FCryptCipher (dynamic) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6428A56D1AAFC68700634F5D /* Build configuration list for PBXNativeTarget "FCryptCipher (dynamic)" */;
+			buildPhases = (
+				6428A5651AAFC68700634F5D /* Sources */,
+				6428A5661AAFC68700634F5D /* Frameworks */,
+				6428A5671AAFC68700634F5D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FCryptCipher (dynamic)";
+			productName = Z80;
+			productReference = 6428A5691AAFC68700634F5D /* libFCryptCipher.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		6428A57B1AAFEDED00634F5D /* FCryptCipher (static) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6428A57D1AAFEDED00634F5D /* Build configuration list for PBXNativeTarget "FCryptCipher (static)" */;
+			buildPhases = (
+				6428A5781AAFEDED00634F5D /* Sources */,
+				6428A5791AAFEDED00634F5D /* Frameworks */,
+				6428A57A1AAFEDED00634F5D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FCryptCipher (static)";
+			productName = "Z80-Static";
+			productReference = 6428A57C1AAFEDED00634F5D /* libFCryptCipher.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		64A7065C1CD2263F002E9B99 /* FCryptCipher (dynamic +ABI) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64A706621CD2263F002E9B99 /* Build configuration list for PBXNativeTarget "FCryptCipher (dynamic +ABI)" */;
+			buildPhases = (
+				64A7065D1CD2263F002E9B99 /* Sources */,
+				64A7065F1CD2263F002E9B99 /* Frameworks */,
+				64A706601CD2263F002E9B99 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FCryptCipher (dynamic +ABI)";
+			productName = Z80;
+			productReference = 64A706651CD2263F002E9B99 /* libFCryptCipher.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		64A706661CD22643002E9B99 /* FCryptCipher (module) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64A7066C1CD22643002E9B99 /* Build configuration list for PBXNativeTarget "FCryptCipher (module)" */;
+			buildPhases = (
+				64A706671CD22643002E9B99 /* Sources */,
+				64A706691CD22643002E9B99 /* Frameworks */,
+				64A7066A1CD22643002E9B99 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FCryptCipher (module)";
+			productName = Z80;
+			productReference = 64A7066F1CD22643002E9B99 /* FCrypt.Cipher */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		64A706701CD22669002E9B99 /* FCryptCipher (static +ABI) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64A706751CD22669002E9B99 /* Build configuration list for PBXNativeTarget "FCryptCipher (static +ABI)" */;
+			buildPhases = (
+				64A706711CD22669002E9B99 /* Sources */,
+				64A706731CD22669002E9B99 /* Frameworks */,
+				64A706741CD22669002E9B99 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FCryptCipher (static +ABI)";
+			productName = "Z80-Static";
+			productReference = 64A706781CD22669002E9B99 /* libFCryptCipher.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		64A706791CD22674002E9B99 /* FCryptCipher (static +ABI -API) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64A7067E1CD22674002E9B99 /* Build configuration list for PBXNativeTarget "FCryptCipher (static +ABI -API)" */;
+			buildPhases = (
+				64A7067A1CD22674002E9B99 /* Sources */,
+				64A7067C1CD22674002E9B99 /* Frameworks */,
+				64A7067D1CD22674002E9B99 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FCryptCipher (static +ABI -API)";
+			productName = "Z80-Static";
+			productReference = 64A706811CD22674002E9B99 /* libFCryptCipher.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6428A5611AAFC68700634F5D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = redcode;
+				TargetAttributes = {
+					6428A5681AAFC68700634F5D = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					6428A57B1AAFEDED00634F5D = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 6428A5641AAFC68700634F5D /* Build configuration list for PBXProject "FCrypt Cipher" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6428A5601AAFC68700634F5D;
+			productRefGroup = 6428A56A1AAFC68700634F5D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6428A5681AAFC68700634F5D /* FCryptCipher (dynamic) */,
+				64A7065C1CD2263F002E9B99 /* FCryptCipher (dynamic +ABI) */,
+				64A706661CD22643002E9B99 /* FCryptCipher (module) */,
+				6428A57B1AAFEDED00634F5D /* FCryptCipher (static) */,
+				64A706701CD22669002E9B99 /* FCryptCipher (static +ABI) */,
+				64A706791CD22674002E9B99 /* FCryptCipher (static +ABI -API) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6428A5651AAFC68700634F5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6428A5771AAFC72900634F5D /* FCrypt.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6428A5781AAFEDED00634F5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6428A5801AAFEF1D00634F5D /* FCrypt.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64A7065D1CD2263F002E9B99 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64A7065E1CD2263F002E9B99 /* FCrypt.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64A706671CD22643002E9B99 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64A706681CD22643002E9B99 /* FCrypt.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64A706711CD22669002E9B99 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64A706721CD22669002E9B99 /* FCrypt.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64A7067A1CD22674002E9B99 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64A7067B1CD22674002E9B99 /* FCrypt.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6428A56B1AAFC68700634F5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_ENABLE_BUILTIN_FUNCTIONS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/include,
+					../../API/C,
+				);
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				LLVM_LTO = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
+				STRIP_STYLE = "non-global";
+			};
+			name = Debug;
+		};
+		6428A56C1AAFC68700634F5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_ENABLE_BUILTIN_FUNCTIONS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/include,
+					../../API/C,
+				);
+				LINK_WITH_STANDARD_LIBRARIES = NO;
+				LLVM_LTO = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CFLAGS = "";
+				STRIP_STYLE = "non-global";
+			};
+			name = Release;
+		};
+		6428A56E1AAFC68700634F5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1.0.0;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = FCryptCipher;
+				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/cipher;
+			};
+			name = Debug;
+		};
+		6428A56F1AAFC68700634F5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1.0.0;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = FCryptCipher;
+				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/cipher;
+			};
+			name = Release;
+		};
+		6428A57E1AAFEDED00634F5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = FCryptCipher;
+			};
+			name = Debug;
+		};
+		6428A57F1AAFEDED00634F5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = FCryptCipher;
+			};
+			name = Release;
+		};
+		64A706631CD2263F002E9B99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1.0.0;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = FCryptCipher;
+				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/cipher;
+			};
+			name = Debug;
+		};
+		64A706641CD2263F002E9B99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1.0.0;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = FCryptCipher;
+				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/cipher;
+			};
+			name = Release;
+		};
+		64A7066D1CD22643002E9B99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1.0.0;
+				DYLIB_INSTALL_NAME_BASE = "";
+				EXECUTABLE_EXTENSION = Cipher;
+				INSTALL_PATH = /usr/local/lib/modules/cipher;
+				LD_DYLIB_INSTALL_NAME = "$(EXECUTABLE_PATH)";
+				PRODUCT_NAME = FCrypt;
+				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/cipher;
+			};
+			name = Debug;
+		};
+		64A7066E1CD22643002E9B99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1.0.0;
+				DYLIB_INSTALL_NAME_BASE = "";
+				EXECUTABLE_EXTENSION = Cipher;
+				INSTALL_PATH = /usr/local/lib/modules/cipher;
+				LD_DYLIB_INSTALL_NAME = "$(EXECUTABLE_PATH)";
+				PRODUCT_NAME = FCrypt;
+				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/cipher;
+			};
+			name = Release;
+		};
+		64A706761CD22669002E9B99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = FCryptCipher;
+			};
+			name = Debug;
+		};
+		64A706771CD22669002E9B99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = FCryptCipher;
+			};
+			name = Release;
+		};
+		64A7067F1CD22674002E9B99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = FCryptCipher;
+			};
+			name = Debug;
+		};
+		64A706801CD22674002E9B99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = FCryptCipher;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6428A5641AAFC68700634F5D /* Build configuration list for PBXProject "FCrypt Cipher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6428A56B1AAFC68700634F5D /* Debug */,
+				6428A56C1AAFC68700634F5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6428A56D1AAFC68700634F5D /* Build configuration list for PBXNativeTarget "FCryptCipher (dynamic)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6428A56E1AAFC68700634F5D /* Debug */,
+				6428A56F1AAFC68700634F5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6428A57D1AAFEDED00634F5D /* Build configuration list for PBXNativeTarget "FCryptCipher (static)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6428A57E1AAFEDED00634F5D /* Debug */,
+				6428A57F1AAFEDED00634F5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64A706621CD2263F002E9B99 /* Build configuration list for PBXNativeTarget "FCryptCipher (dynamic +ABI)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64A706631CD2263F002E9B99 /* Debug */,
+				64A706641CD2263F002E9B99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64A7066C1CD22643002E9B99 /* Build configuration list for PBXNativeTarget "FCryptCipher (module)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64A7066D1CD22643002E9B99 /* Debug */,
+				64A7066E1CD22643002E9B99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64A706751CD22669002E9B99 /* Build configuration list for PBXNativeTarget "FCryptCipher (static +ABI)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64A706761CD22669002E9B99 /* Debug */,
+				64A706771CD22669002E9B99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64A7067E1CD22674002E9B99 /* Build configuration list for PBXNativeTarget "FCryptCipher (static +ABI -API)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64A7067F1CD22674002E9B99 /* Debug */,
+				64A706801CD22674002E9B99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6428A5611AAFC68700634F5D /* Project object */;
+}

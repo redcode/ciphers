@@ -1,5 +1,4 @@
 /* Anubis Cipher C API
-
 Copyright © Paulo S. L. M. Barreto.
 Copyright © Vincent Rijmen.
 Copyright © 2004 Aaron Grothe.
