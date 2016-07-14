@@ -22,7 +22,7 @@ typedef struct {zuint32 ks[32];} SEED;
 Z_C_SYMBOLS_BEGIN
 
 #ifndef CIPHER_SEED_ABI
-#	ifdef CIPHER_SEED_AS_STATIC
+#	ifdef CIPHER_SEED_STATIC
 #		define CIPHER_SEED_ABI
 #	else
 #		define CIPHER_SEED_ABI Z_API
@@ -34,7 +34,7 @@ CIPHER_SEED_ABI extern ZCipherABI const abi_cipher_seed;
 #ifndef CIPHER_SEED_OMIT_FUNCTION_PROTOTYPES
 
 #	ifndef CIPHER_SEED_API
-#		ifdef CIPHER_SEED_AS_STATIC
+#		ifdef CIPHER_SEED_STATIC
 #			define CIPHER_SEED_API
 #		else
 #			define CIPHER_SEED_API Z_API

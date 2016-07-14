@@ -7,17 +7,19 @@ Copyright © 2011 Jon Oberheide.
 Copyright © 2011-2016 Manuel Sainz de Baranda y Goñi.
 Released under the terms of the GNU Lesser General Public License v3. */
 
-#if defined(CIPHER_ARC4_HIDE_API)
+#define DEFINED(WHAT) (defined CIPHER_ARC4_##WHAT)
+
+#if DEFINED(HIDE_API)
 #	define CIPHER_ARC4_API static
-#elif defined(CIPHER_ARC4_AS_DYNAMIC)
+#elif DEFINED(DYNAMIC)
 #	define CIPHER_ARC4_API Z_API_EXPORT
 #else
 #	define CIPHER_ARC4_API
 #endif
 
-#if defined(CIPHER_ARC4_HIDE_ABI)
+#if DEFINED(HIDE_ABI)
 #	define CIPHER_ARC4_ABI static
-#elif defined(CIPHER_ARC4_AS_DYNAMIC)
+#elif DEFINED(DYNAMIC)
 #	define CIPHER_ARC4_ABI Z_API_EXPORT
 #else
 #	define CIPHER_ARC4_ABI
@@ -25,7 +27,7 @@ Released under the terms of the GNU Lesser General Public License v3. */
 
 #define CIPHER_ARC4_OMIT_FUNCTION_PROTOTYPES
 
-#ifdef CIPHER_ARC4_USE_LOCAL_HEADER
+#if DEFINED(USE_LOCAL_HEADER)
 #	include "ARC4.h"
 #else
 #	include <cipher/ARC4.h>
@@ -78,7 +80,7 @@ void arc4_cipher(ARC4 *object, zuint8 const *block, zsize block_size, zuint8 *ou
 	}
 
 
-#if defined(CIPHER_ARC4_BUILD_ABI) || defined(CIPHER_ARC4_BUILD_MODULE_ABI)
+#if DEFINED(BUILD_ABI) || DEFINED(BUILD_MODULE_ABI)
 
 	CIPHER_ARC4_ABI ZCipherABI const abi_cipher_arc4 = {
 		/* test_key		 */ NULL,
@@ -98,7 +100,7 @@ void arc4_cipher(ARC4 *object, zuint8 const *block, zsize block_size, zuint8 *ou
 
 #endif
 
-#ifdef CIPHER_ARC4_BUILD_MODULE_ABI
+#if DEFINED(BUILD_MODULE_ABI)
 
 #	include <Z/ABIs/generic/module.h>
 
@@ -108,7 +110,7 @@ void arc4_cipher(ARC4 *object, zuint8 const *block, zsize block_size, zuint8 *ou
 		"LLGPLv3";
 
 	static ZModuleUnit const unit = {
-		"ARC4", Z_VERSION(1, 0, 0), information, &abi_cipher_arc4
+		"ARC4", "ARC4", Z_VERSION(1, 0, 0), information, &abi_cipher_arc4
 	};
 
 	static ZModuleDomain const domain = {"cipher", Z_VERSION(1, 0, 0), 1, &unit};

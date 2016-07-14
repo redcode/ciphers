@@ -8,11 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6428A5751AAFC6DF00634F5D /* Khazad.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* Khazad.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6428A5771AAFC72900634F5D /* Khazad.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* Khazad.c */; settings = {COMPILER_FLAGS = "-DCIPHER_KHAZAD_AS_DYNAMIC"; }; };
+		6428A5771AAFC72900634F5D /* Khazad.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* Khazad.c */; settings = {COMPILER_FLAGS = "-DCIPHER_KHAZAD_DYNAMIC"; }; };
 		6428A5801AAFEF1D00634F5D /* Khazad.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* Khazad.c */; };
-		64A706841CD2495D002E9B99 /* Khazad.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* Khazad.c */; settings = {COMPILER_FLAGS = "-DCIPHER_KHAZAD_AS_DYNAMIC -DCIPHER_KHAZAD_BUILD_ABI"; }; };
-		64A706871CD2495D002E9B99 /* Khazad.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* Khazad.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		64A7068E1CD24965002E9B99 /* Khazad.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* Khazad.c */; settings = {COMPILER_FLAGS = "-DCIPHER_KHAZAD_AS_DYNAMIC -DCIPHER_KHAZAD_BUILD_MODULE_ABI"; }; };
+		64A7068E1CD24965002E9B99 /* Khazad.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* Khazad.c */; settings = {COMPILER_FLAGS = "-DCIPHER_KHAZAD_DYNAMIC -DCIPHER_KHAZAD_BUILD_MODULE_ABI"; }; };
 		64A706911CD24965002E9B99 /* Khazad.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* Khazad.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		64A706981CD24ADC002E9B99 /* Khazad.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* Khazad.c */; settings = {COMPILER_FLAGS = "-DCIPHER_KHAZAD_BUILD_ABI"; }; };
 		64A706A11CD24AE2002E9B99 /* Khazad.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* Khazad.c */; settings = {COMPILER_FLAGS = "-DCIPHER_KHAZAD_BUILD_ABI -DCIPHER_KHAZAD_HIDE_API"; }; };
@@ -26,7 +24,6 @@
 		6428A5741AAFC6DF00634F5D /* Khazad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Khazad.h; sourceTree = "<group>"; };
 		6428A5761AAFC72900634F5D /* Khazad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Khazad.c; sourceTree = "<group>"; };
 		6428A57C1AAFEDED00634F5D /* libKhazadCipher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKhazadCipher.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		64A7068B1CD2495D002E9B99 /* libKhazadCipher.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libKhazadCipher.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		64A706951CD24965002E9B99 /* Khazad.Cipher */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = Khazad.Cipher; sourceTree = BUILT_PRODUCTS_DIR; };
 		64A7069E1CD24ADC002E9B99 /* libKhazadCipher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKhazadCipher.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		64A706A71CD24AE2002E9B99 /* libKhazadCipher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKhazadCipher.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,13 +38,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		6428A5791AAFEDED00634F5D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		64A706851CD2495D002E9B99 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -92,7 +82,6 @@
 			children = (
 				6428A5691AAFC68700634F5D /* libKhazadCipher.dylib */,
 				6428A57C1AAFEDED00634F5D /* libKhazadCipher.a */,
-				64A7068B1CD2495D002E9B99 /* libKhazadCipher.dylib */,
 				64A706951CD24965002E9B99 /* Khazad.Cipher */,
 				64A7069E1CD24ADC002E9B99 /* libKhazadCipher.a */,
 				64A706A71CD24AE2002E9B99 /* libKhazadCipher.a */,
@@ -134,14 +123,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				64A707061CD293F1002E9B99 /* Khazad.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		64A706861CD2495D002E9B99 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				64A706871CD2495D002E9B99 /* Khazad.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,23 +186,6 @@
 			productName = "Z80-Static";
 			productReference = 6428A57C1AAFEDED00634F5D /* libKhazadCipher.a */;
 			productType = "com.apple.product-type.library.static";
-		};
-		64A706821CD2495D002E9B99 /* KhazadCipher (dynamic +ABI) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 64A706881CD2495D002E9B99 /* Build configuration list for PBXNativeTarget "KhazadCipher (dynamic +ABI)" */;
-			buildPhases = (
-				64A706831CD2495D002E9B99 /* Sources */,
-				64A706851CD2495D002E9B99 /* Frameworks */,
-				64A706861CD2495D002E9B99 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "KhazadCipher (dynamic +ABI)";
-			productName = Z80;
-			productReference = 64A7068B1CD2495D002E9B99 /* libKhazadCipher.dylib */;
-			productType = "com.apple.product-type.library.dynamic";
 		};
 		64A7068C1CD24965002E9B99 /* Khazad (module) */ = {
 			isa = PBXNativeTarget;
@@ -304,7 +268,6 @@
 			projectRoot = "";
 			targets = (
 				6428A5681AAFC68700634F5D /* KhazadCipher (dynamic) */,
-				64A706821CD2495D002E9B99 /* KhazadCipher (dynamic +ABI) */,
 				64A7068C1CD24965002E9B99 /* Khazad (module) */,
 				6428A57B1AAFEDED00634F5D /* KhazadCipher (static) */,
 				64A706961CD24ADC002E9B99 /* KhazadCipher (static +ABI) */,
@@ -327,14 +290,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6428A5801AAFEF1D00634F5D /* Khazad.c in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		64A706831CD2495D002E9B99 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				64A706841CD2495D002E9B99 /* Khazad.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,28 +441,6 @@
 			};
 			name = Release;
 		};
-		64A706891CD2495D002E9B99 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1.0.0;
-				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = KhazadCipher;
-				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/cipher;
-			};
-			name = Debug;
-		};
-		64A7068A1CD2495D002E9B99 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1.0.0;
-				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = KhazadCipher;
-				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/cipher;
-			};
-			name = Release;
-		};
 		64A706931CD24965002E9B99 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -590,15 +523,6 @@
 			buildConfigurations = (
 				6428A57E1AAFEDED00634F5D /* Debug */,
 				6428A57F1AAFEDED00634F5D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		64A706881CD2495D002E9B99 /* Build configuration list for PBXNativeTarget "KhazadCipher (dynamic +ABI)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				64A706891CD2495D002E9B99 /* Debug */,
-				64A7068A1CD2495D002E9B99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

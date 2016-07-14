@@ -39,17 +39,19 @@ Copyright © Adam J. Richter.
 Copyright © 2011-2016 Manuel Sainz de Baranda y Goñi.
 Released under the terms of the GNU Lesser General Public License v3. */
 
-#if defined(CIPHER_AES_HIDE_API)
+#define DEFINED(WHAT) (defined CIPHER_AES_##WHAT)
+
+#if DEFINED(HIDE_API)
 #	define CIPHER_AES_API static
-#elif defined(CIPHER_AES_AS_DYNAMIC)
+#elif DEFINED(DYNAMIC)
 #	define CIPHER_AES_API Z_API_EXPORT
 #else
 #	define CIPHER_AES_API
 #endif
 
-#if defined(CIPHER_AES_HIDE_ABI)
+#if DEFINED(HIDE_ABI)
 #	define CIPHER_AES_ABI static
-#elif defined(CIPHER_AES_AS_DYNAMIC)
+#elif DEFINED(DYNAMIC)
 #	define CIPHER_AES_ABI Z_API_EXPORT
 #else
 #	define CIPHER_AES_ABI
@@ -57,7 +59,7 @@ Released under the terms of the GNU Lesser General Public License v3. */
 
 #define CIPHER_AES_OMIT_FUNCTION_PROTOTYPES
 
-#ifdef CIPHER_AES_USE_LOCAL_HEADER
+#if DEFINED(USE_LOCAL_HEADER)
 #	include "AES.h"
 #else
 #	include <cipher/AES.h>
@@ -1135,16 +1137,16 @@ Z_INLINE zuint8 byte(const zuint32 x, const zuint n)
 	 (((x) & Z_UINT32(0x7F7F7F7F)) << 1) ^ \
 	((((x) & Z_UINT32(0x80808080)) >> 7) * 0x1B)
 
-#define INVERSE_MIX_COLUMNS(y, x)		    \
-	u = STAR_X(x);				    \
-	v = STAR_X(u);				    \
-	w = STAR_X(v);				    \
-	t = w ^ (x);				    \
-						    \
-	(y) =	(u ^ v ^ w)			  ^ \
-		z_uint32_rotated_right(u ^ t,  8) ^ \
-		z_uint32_rotated_right(v ^ t, 16) ^ \
-		z_uint32_rotated_right(t,     24);
+#define INVERSE_MIX_COLUMNS(y, x)		   \
+	u = STAR_X(x);				   \
+	v = STAR_X(u);				   \
+	w = STAR_X(v);				   \
+	t = w ^ (x);				   \
+						   \
+	(y) =	(u ^ v ^ w)			 ^ \
+		z_uint32_rotate_right(u ^ t,  8) ^ \
+		z_uint32_rotate_right(v ^ t, 16) ^ \
+		z_uint32_rotate_right(t,     24);
 
 #define LS_BOX					\
 	fl[0][byte(t, 0)] ^ fl[1][byte(t, 1)] ^ \
@@ -1164,7 +1166,7 @@ CIPHER_AES_API void aes_128_set_key(AES128 *object, zuint32 const *key, zsize ke
 
 	for (i = 0; i < 10; ++i)
 		{
-		t = z_uint32_rotated_right(t, 8);
+		t = z_uint32_rotate_right(t, 8);
 		t = LS_BOX ^ rco[i];
 		t ^= e[4 * i	]; e[4 * i + 4] = t;
 		t ^= e[4 * i + 1]; e[4 * i + 5] = t;
@@ -1199,7 +1201,7 @@ CIPHER_AES_API void aes_192_set_key(AES192 *object, zuint32 const *key, zsize ke
 
 	for (i = 0; i < 8; ++i)
 		{
-		t = z_uint32_rotated_right(t, 8);
+		t = z_uint32_rotate_right(t, 8);
 		t = LS_BOX ^ rco[i];
 		t ^= e[6 * i	]; e[6 * i +  6] = t;
 		t ^= e[6 * i + 1]; e[6 * i +  7] = t;
@@ -1223,7 +1225,7 @@ CIPHER_AES_API void aes_192_set_key(AES192 *object, zuint32 const *key, zsize ke
 
 
 #define LOOP_8_TOP_HALF			      \
-	t = z_uint32_rotated_right(t, 8);     \
+	t = z_uint32_rotate_right(t, 8);      \
 	t = LS_BOX ^ rco[i];		      \
 	t ^= e[8 * i	]; e[8 * i +  8] = t; \
 	t ^= e[8 * i + 1]; e[8 * i +  9] = t; \
@@ -1295,12 +1297,8 @@ CIPHER_AES_API void aes_256_set_key(AES256 *object, zuint32 const *key, zsize ke
 	LAST_STEP(bo, bi, 3);
 
 
-CIPHER_AES_API void aes_128_encipher(
-	AES128*	       object,
-	zuint32 const* block,
-	zsize	       block_size,
-	zuint32*       output
-)
+CIPHER_AES_API
+void aes_128_encipher(AES128 *object, zuint32 const *block, zsize block_size, zuint32 *output)
 	{
 	zuint32 b0[4], b1[4];
 	zuint32 const *k;
@@ -1334,12 +1332,8 @@ CIPHER_AES_API void aes_128_encipher(
 	}
 
 
-CIPHER_AES_API void aes_192_encipher(
-	AES192*	       object,
-	zuint32 const* block,
-	zsize	       block_size,
-	zuint32*       output
-)
+CIPHER_AES_API
+void aes_192_encipher(AES192 *object, zuint32 const *block, zsize block_size, zuint32 *output)
 	{
 	zuint32 b0[4], b1[4];
 	zuint32 const *k;
@@ -1375,12 +1369,8 @@ CIPHER_AES_API void aes_192_encipher(
 	}
 
 
-CIPHER_AES_API void aes_256_encipher(
-	AES256*	       object,
-	zuint32 const* block,
-	zsize	       block_size,
-	zuint32*       output
-)
+CIPHER_AES_API
+void aes_256_encipher(AES256 *object, zuint32 const *block, zsize block_size, zuint32 *output)
 	{
 	zuint32 b0[4], b1[4];
 	zuint32 const *k;
@@ -1449,12 +1439,8 @@ CIPHER_AES_API void aes_256_encipher(
 	LAST_STEP(bo, bi, 3);
 
 
-CIPHER_AES_API void aes_128_decipher(
-	AES128*	       object,
-	zuint32 const* block,
-	zsize	       block_size,
-	zuint32*       output
-)
+CIPHER_AES_API
+void aes_128_decipher(AES128 *object, zuint32 const *block, zsize block_size, zuint32 *output)
 	{
 	zuint32 b0[4], b1[4];
 	zuint32 const *k;
@@ -1488,12 +1474,8 @@ CIPHER_AES_API void aes_128_decipher(
 	}
 
 
-CIPHER_AES_API void aes_192_decipher(
-	AES192*	       object,
-	zuint32 const* block,
-	zsize	       block_size,
-	zuint32*       output
-)
+CIPHER_AES_API
+void aes_192_decipher(AES192 *object, zuint32 const *block, zsize block_size, zuint32 *output)
 	{
 	zuint32 b0[4], b1[4];
 	zuint32 const *k;
@@ -1529,12 +1511,8 @@ CIPHER_AES_API void aes_192_decipher(
 	}
 
 
-CIPHER_AES_API void aes_256_decipher(
-	AES256*	       object,
-	zuint32 const* block,
-	zsize	       block_size,
-	zuint32*       output
-)
+CIPHER_AES_API
+void aes_256_decipher(AES256 *object, zuint32 const *block, zsize block_size, zuint32 *output)
 	{
 	zuint32 b0[4], b1[4];
 	zuint32 const *k;
@@ -1572,7 +1550,7 @@ CIPHER_AES_API void aes_256_decipher(
 	}
 
 
-#if defined(CIPHER_AES_BUILD_ABI) || defined(CIPHER_AES_BUILD_MODULE_ABI)
+#if DEFINED(BUILD_ABI) || DEFINED(BUILD_MODULE_ABI)
 
 	CIPHER_AES_ABI ZCipherABI const abi_cipher_aes_128 = {
 		/* test_key		 */ NULL,
@@ -1624,7 +1602,7 @@ CIPHER_AES_API void aes_256_decipher(
 
 #endif
 
-#ifdef CIPHER_AES_BUILD_MODULE_ABI
+#if DEFINED(BUILD_MODULE_ABI)
 
 #	include <Z/ABIs/generic/module.h>
 
@@ -1638,9 +1616,9 @@ CIPHER_AES_API void aes_256_decipher(
 		"LLGPLv3";
 
 	static ZModuleUnit const units[] = {
-		{"AES-128", Z_VERSION(1, 0, 0), information, &abi_cipher_aes_128},
-		{"AES-192", Z_VERSION(1, 0, 0), information, &abi_cipher_aes_192},
-		{"AES-256", Z_VERSION(1, 0, 0), information, &abi_cipher_aes_256}
+		{"AES128", "AES-128", Z_VERSION(1, 0, 0), information, &abi_cipher_aes_128},
+		{"AES192", "AES-192", Z_VERSION(1, 0, 0), information, &abi_cipher_aes_192},
+		{"AES256", "AES-256", Z_VERSION(1, 0, 0), information, &abi_cipher_aes_256}
 	};
 
 	static ZModuleDomain const domain = {"cipher", Z_VERSION(1, 0, 0), 3, units};

@@ -22,7 +22,7 @@ typedef struct {zuint32 key[4];} TEA;
 Z_C_SYMBOLS_BEGIN
 
 #ifndef CIPHER_TEA_ABI
-#	ifdef CIPHER_TEA_AS_STATIC
+#	ifdef CIPHER_TEA_STATIC
 #		define CIPHER_TEA_ABI
 #	else
 #		define CIPHER_TEA_ABI Z_API
@@ -36,7 +36,7 @@ CIPHER_TEA_ABI extern ZCipherABI const abi_cipher_xeta;
 #ifndef CIPHER_TEA_OMIT_FUNCTION_PROTOTYPES
 
 #	ifndef CIPHER_TEA_API
-#		ifdef CIPHER_TEA_AS_STATIC
+#		ifdef CIPHER_TEA_STATIC
 #			define CIPHER_TEA_API
 #		else
 #			define CIPHER_TEA_API Z_API

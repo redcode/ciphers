@@ -22,17 +22,19 @@ Released under the terms of the GNU Lesser General Public License v3.
 | Third Edition.							  |
 '------------------------------------------------------------------------*/
 
-#if defined(CIPHER_TWOFISH_HIDE_API)
+#define DEFINED(WHAT) (defined CIPHER_TWOFISH_##WHAT)
+
+#if DEFINED(HIDE_API)
 #	define CIPHER_TWOFISH_API static
-#elif defined(CIPHER_TWOFISH_AS_DYNAMIC)
+#elif DEFINED(DYNAMIC)
 #	define CIPHER_TWOFISH_API Z_API_EXPORT
 #else
 #	define CIPHER_TWOFISH_API
 #endif
 
-#if defined(CIPHER_TWOFISH_HIDE_ABI)
+#if DEFINED(HIDE_ABI)
 #	define CIPHER_TWOFISH_ABI static
-#elif defined(CIPHER_TWOFISH_AS_DYNAMIC)
+#elif DEFINED(DYNAMIC)
 #	define CIPHER_TWOFISH_ABI Z_API_EXPORT
 #else
 #	define CIPHER_TWOFISH_ABI
@@ -40,7 +42,7 @@ Released under the terms of the GNU Lesser General Public License v3.
 
 #define CIPHER_TWOFISH_OMIT_FUNCTION_PROTOTYPES
 
-#ifdef CIPHER_TWOFISH_USE_LOCAL_HEADER
+#if DEFINED(USE_LOCAL_HEADER)
 #	include "Twofish.h"
 #else
 #	include <cipher/Twofish.h>
@@ -704,39 +706,39 @@ static zuint8 const calc_sb_tbl[512] = {
      mds[2][q1[c ^ key[(j) + 10]] ^ key[(j) + 2]] ^ \
      mds[3][q1[d ^ key[(j) + 11]] ^ key[(j) + 3]]
 
-#define K(a, j, k, l, m, n)				  \
-	{						  \
-	x = K_2(k, l, k, l, 0);				  \
-	y = K_2(m, n, m, n, 4);				  \
-	y = z_uint32_rotated_left(y, 8);		  \
-	x += y; y += x; object->a[j] = x;		  \
-	object->a[(j) + 1] = z_uint32_rotated_left(y, 9); \
+#define K(a, j, k, l, m, n)				 \
+	{						 \
+	x = K_2(k, l, k, l, 0);				 \
+	y = K_2(m, n, m, n, 4);				 \
+	y = z_uint32_rotate_left(y, 8);			 \
+	x += y; y += x; object->a[j] = x;		 \
+	object->a[(j) + 1] = z_uint32_rotate_left(y, 9); \
 	}
 
 #define K192_2(a, b, c, d, j) K_2			  \
 	(q0[a ^ key[(j) + 16]], q1[b ^ key[(j) + 17]],	  \
 	 q0[c ^ key[(j) + 18]], q1[d ^ key[(j) + 19]], j)
 
-#define K192(a, j, k, l, m, n)				  \
-	{						  \
-	x = K192_2(l, l, k, k, 0);			  \
-	y = K192_2(n, n, m, m, 4);			  \
-	y = z_uint32_rotated_left(y, 8);		  \
-	x += y; y += x; object->a[j] = x;		  \
-	object->a[(j) + 1] = z_uint32_rotated_left(y, 9); \
+#define K192(a, j, k, l, m, n)				 \
+	{						 \
+	x = K192_2(l, l, k, k, 0);			 \
+	y = K192_2(n, n, m, m, 4);			 \
+	y = z_uint32_rotate_left(y, 8);			 \
+	x += y; y += x; object->a[j] = x;		 \
+	object->a[(j) + 1] = z_uint32_rotate_left(y, 9); \
 	}
 
 #define K256_2(a, b, j) K192_2				  \
 	(q1[b ^ key[(j) + 24]], q1[a ^ key[(j) + 25]],	  \
 	 q0[a ^ key[(j) + 26]], q0[b ^ key[(j) + 27]], j)
 
-#define K256(a, j, k, l, m, n)				  \
-	{						  \
-	x = K256_2(k, l, 0);				  \
-	y = K256_2(m, n, 4);				  \
-	y = z_uint32_rotated_left(y, 8);		  \
-	x += y; y += x; object->a[j] = x;		  \
-	object->a[(j) + 1] = z_uint32_rotated_left(y, 9); \
+#define K256(a, j, k, l, m, n)				 \
+	{						 \
+	x = K256_2(k, l, 0);				 \
+	y = K256_2(m, n, 4);				 \
+	y = z_uint32_rotate_left(y, 8);			 \
+	x += y; y += x; object->a[j] = x;		 \
+	object->a[(j) + 1] = z_uint32_rotate_left(y, 9); \
 	}
 
 
@@ -891,23 +893,23 @@ CIPHER_TWOFISH_API void twofish_set_key(Twofish *object, const zuint8 *key, zsiz
 | 32-bit chunks of the text.						      |
 '----------------------------------------------------------------------------*/
 
-#define ENCIPHERING_ROUND(n, a, b, c, d)       \
-	x    = G1(a);			       \
-	y    = G2(b);			       \
-	x   += y;			       \
-	y   += x + object->k[2 * (n) + 1];     \
-	(c) ^= x + object->k[2 * (n)	];     \
-	(c)  = z_uint32_rotated_right((c), 1); \
-	(d)  = z_uint32_rotated_left ((d), 1) ^ y
+#define ENCIPHERING_ROUND(n, a, b, c, d)      \
+	x    = G1(a);			      \
+	y    = G2(b);			      \
+	x   += y;			      \
+	y   += x + object->k[2 * (n) + 1];    \
+	(c) ^= x + object->k[2 * (n)	];    \
+	(c)  = z_uint32_rotate_right((c), 1); \
+	(d)  = z_uint32_rotate_left ((d), 1) ^ y
 
-#define DECIPHERING_ROUND(n, a, b, c, d)       \
-	x    = G1(a);			       \
-	y    = G2(b);			       \
-	x   += y;			       \
-	y   += x;			       \
-	(d) ^= y + object->k[2 * (n) + 1];     \
-	(d)  = z_uint32_rotated_right((d), 1); \
-	(c)  = z_uint32_rotated_left ((c), 1); \
+#define DECIPHERING_ROUND(n, a, b, c, d)      \
+	x    = G1(a);			      \
+	y    = G2(b);			      \
+	x   += y;			      \
+	y   += x;			      \
+	(d) ^= y + object->k[2 * (n) + 1];    \
+	(d)  = z_uint32_rotate_right((d), 1); \
+	(c)  = z_uint32_rotate_left ((c), 1); \
 	(c) ^= (x + object->k[2 * (n)])
 
 /*----------------------------------------------------------.
@@ -939,12 +941,8 @@ CIPHER_TWOFISH_API void twofish_set_key(Twofish *object, const zuint8 *key, zsiz
 	output[n] = z_uint32_little_endian(x)
 
 
-CIPHER_TWOFISH_API void twofish_encipher(
-	Twofish*       object,
-	const zuint32* block,
-	zsize	       block_size,
-	zuint32*       output
-)
+CIPHER_TWOFISH_API
+void twofish_encipher(Twofish *object, const zuint32 *block, zsize block_size, zuint32 *output)
 	{
 	zuint32 a, b, c, d, x, y;
 
@@ -981,12 +979,8 @@ CIPHER_TWOFISH_API void twofish_encipher(
 	}
 
 
-CIPHER_TWOFISH_API void twofish_decipher(
-	Twofish*       object,
-	const zuint32* block,
-	zsize	       block_size,
-	zuint32*       output
-)
+CIPHER_TWOFISH_API
+void twofish_decipher(Twofish *object, const zuint32 *block, zsize block_size, zuint32 *output)
 	{
 	zuint32 a, b, c, d, x, y;
 
@@ -1023,7 +1017,7 @@ CIPHER_TWOFISH_API void twofish_decipher(
 	}
 
 
-#if defined(CIPHER_TWOFISH_BUILD_ABI) || defined(CIPHER_TWOFISH_BUILD_MODULE_ABI)
+#if DEFINED(BUILD_ABI) || DEFINED(BUILD_MODULE_ABI)
 
 	CIPHER_TWOFISH_ABI ZCipherABI const abi_cipher_twofish = {
 		/* test_key		 */ NULL,
@@ -1043,7 +1037,7 @@ CIPHER_TWOFISH_API void twofish_decipher(
 
 #endif
 
-#ifdef CIPHER_TWOFISH_BUILD_MODULE_ABI
+#if DEFINED(BUILD_MODULE_ABI)
 
 #	include <Z/ABIs/generic/module.h>
 
@@ -1056,7 +1050,7 @@ CIPHER_TWOFISH_API void twofish_decipher(
 		"LLGPLv3";
 
 	static ZModuleUnit const unit = {
-		"Twofish", Z_VERSION(1, 0, 0), information, &abi_cipher_twofish
+		"Twofish", "Twofish", Z_VERSION(1, 0, 0), information, &abi_cipher_twofish
 	};
 
 	static ZModuleDomain const domain = {"cipher", Z_VERSION(1, 0, 0), 1, &unit};

@@ -9,17 +9,19 @@ Copyright © 2007 Korea Information Security Agency (KISA).
 Copyright © 2011-2016 Manuel Sainz de Baranda y Goñi.
 Released under the terms of the GNU Lesser General Public License v3. */
 
-#if defined(CIPHER_SEED_HIDE_API)
+#define DEFINED(WHAT) (defined CIPHER_SEED_##WHAT)
+
+#if DEFINED(HIDE_API)
 #	define CIPHER_SEED_API static
-#elif defined(CIPHER_SEED_AS_DYNAMIC)
+#elif DEFINED(DYNAMIC)
 #	define CIPHER_SEED_API Z_API_EXPORT
 #else
 #	define CIPHER_SEED_API
 #endif
 
-#if defined(CIPHER_SEED_HIDE_ABI)
+#if DEFINED(HIDE_ABI)
 #	define CIPHER_SEED_ABI static
-#elif defined(CIPHER_SEED_AS_DYNAMIC)
+#elif DEFINED(DYNAMIC)
 #	define CIPHER_SEED_ABI Z_API_EXPORT
 #else
 #	define CIPHER_SEED_ABI
@@ -27,7 +29,7 @@ Released under the terms of the GNU Lesser General Public License v3. */
 
 #define CIPHER_SEED_OMIT_FUNCTION_PROTOTYPES
 
-#ifdef CIPHER_SEED_USE_LOCAL_HEADER
+#if DEFINED(USE_LOCAL_HEADER)
 #	include "SEED.h"
 #else
 #	include <cipher/SEED.h>
@@ -458,7 +460,7 @@ void seed_decipher(SEED *object, zuint32 const *block, zsize block_size, zuint32
 	}
 
 
-#if defined(CIPHER_SEED_BUILD_ABI) || defined(CIPHER_SEED_BUILD_MODULE_ABI)
+#if DEFINED(BUILD_ABI) || DEFINED(BUILD_MODULE_ABI)
 
 	CIPHER_SEED_ABI ZCipherABI const abi_cipher_seed = {
 		/* test_key		 */ NULL,
@@ -478,7 +480,7 @@ void seed_decipher(SEED *object, zuint32 const *block, zsize block_size, zuint32
 
 #endif
 
-#ifdef CIPHER_SEED_BUILD_MODULE_ABI
+#if DEFINED(BUILD_MODULE_ABI)
 
 #	include <Z/ABIs/generic/module.h>
 
@@ -490,7 +492,7 @@ void seed_decipher(SEED *object, zuint32 const *block, zsize block_size, zuint32
 		"LLGPLv3";
 
 	static ZModuleUnit const unit = {
-		"SEED", Z_VERSION(1, 0, 0), information, &abi_cipher_seed
+		"SEED", "SEED", Z_VERSION(1, 0, 0), information, &abi_cipher_seed
 	};
 
 	static ZModuleDomain const domain = {"cipher", Z_VERSION(1, 0, 0), 1, &unit};

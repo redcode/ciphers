@@ -24,7 +24,7 @@ typedef struct {zuint32 k[132];} Serpent;
 Z_C_SYMBOLS_BEGIN
 
 #ifndef CIPHER_SERPENT_ABI
-#	ifdef CIPHER_SERPENT_AS_STATIC
+#	ifdef CIPHER_SERPENT_STATIC
 #		define CIPHER_SERPENT_ABI
 #	else
 #		define CIPHER_SERPENT_ABI Z_API
@@ -36,7 +36,7 @@ CIPHER_SERPENT_ABI extern ZCipherABI const abi_cipher_serpent;
 #ifndef CIPHER_SERPENT_OMIT_FUNCTION_PROTOTYPES
 
 #	ifndef CIPHER_SERPENT_API
-#		ifdef CIPHER_SERPENT_AS_STATIC
+#		ifdef CIPHER_SERPENT_STATIC
 #			define CIPHER_SERPENT_API
 #		else
 #			define CIPHER_SERPENT_API Z_API

@@ -9,17 +9,19 @@ Copyright © 2004 Aaron Grothe.
 Copyright © 2011-2016 Manuel Sainz de Baranda y Goñi.
 Released under the terms of the GNU Lesser General Public License v3. */
 
-#if defined(CIPHER_ANUBIS_HIDE_API)
+#define DEFINED(WHAT) (defined CIPHER_ANUBIS_##WHAT)
+
+#if DEFINED(HIDE_API)
 #	define CIPHER_ANUBIS_API static
-#elif defined(CIPHER_ANUBIS_AS_DYNAMIC)
+#elif DEFINED(DYNAMIC)
 #	define CIPHER_ANUBIS_API Z_API_EXPORT
 #else
 #	define CIPHER_ANUBIS_API
 #endif
 
-#if defined(CIPHER_ANUBIS_HIDE_ABI)
+#if DEFINED(HIDE_ABI)
 #	define CIPHER_ANUBIS_ABI static
-#elif defined(CIPHER_ANUBIS_AS_DYNAMIC)
+#elif DEFINED(DYNAMIC)
 #	define CIPHER_ANUBIS_ABI Z_API_EXPORT
 #else
 #	define CIPHER_ANUBIS_ABI
@@ -27,7 +29,7 @@ Released under the terms of the GNU Lesser General Public License v3. */
 
 #define CIPHER_ANUBIS_OMIT_FUNCTION_PROTOTYPES
 
-#ifdef CIPHER_ANUBIS_USE_LOCAL_HEADER
+#if DEFINED(USE_LOCAL_HEADER)
 #	include "Anubis"
 #else
 #	include <cipher/Anubis.h>
@@ -642,25 +644,17 @@ static void cipher(
 	}
 
 
-CIPHER_ANUBIS_API void anubis_encipher(
-	Anubis*	       object,
-	zuint32 const* block,
-	zsize	       block_size,
-	zuint32*       output
-)
+CIPHER_ANUBIS_API
+void anubis_encipher(Anubis *object, zuint32 const *block, zsize block_size, zuint32 *output)
 	{cipher(object->e, block, block_size, output, object->r);}
 
 
-CIPHER_ANUBIS_API void anubis_decipher(
-	Anubis*	       object,
-	zuint32 const* block,
-	zsize	       block_size,
-	zuint32*       output
-)
+CIPHER_ANUBIS_API
+void anubis_decipher(Anubis *object, zuint32 const *block, zsize block_size, zuint32 *output)
 	{cipher(object->d, block, block_size, output, object->r);}
 
 
-#if defined(CIPHER_ANUBIS_BUILD_ABI) || defined(CIPHER_ANUBIS_BUILD_MODULE_ABI)
+#if DEFINED(BUILD_ABI) || DEFINED(BUILD_MODULE_ABI)
 
 	CIPHER_ANUBIS_ABI ZCipherABI const abi_cipher_anubis = {
 		/* test_key		 */ NULL,
@@ -680,7 +674,7 @@ CIPHER_ANUBIS_API void anubis_decipher(
 
 #endif
 
-#ifdef CIPHER_ANUBIS_BUILD_MODULE_ABI
+#if DEFINED(BUILD_MODULE_ABI)
 
 #	include <Z/ABIs/generic/module.h>
 
@@ -692,7 +686,7 @@ CIPHER_ANUBIS_API void anubis_decipher(
 		"LLGPLv3";
 
 	static ZModuleUnit const unit = {
-		"Anubis", Z_VERSION(1, 0, 0), information, &abi_cipher_anubis
+		"Anubis", "Anubis", Z_VERSION(1, 0, 0), information, &abi_cipher_anubis
 	};
 
 	static ZModuleDomain const domain = {"cipher", Z_VERSION(1, 0, 0), 1, &unit};

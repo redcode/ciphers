@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6428A5751AAFC6DF00634F5D /* Blowfish.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* Blowfish.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6428A5771AAFC72900634F5D /* Blowfish.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* Blowfish.c */; settings = {COMPILER_FLAGS = "-DCIPHER_BLOWFISH_AS_DYNAMIC"; }; };
-		64A706371CD14554002E9B99 /* Blowfish.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* Blowfish.c */; settings = {COMPILER_FLAGS = "-DCIPHER_BLOWFISH_AS_DYNAMIC -DCIPHER_BLOWFISH_BUILD_ABI"; }; };
-		64A7063A1CD14554002E9B99 /* Blowfish.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* Blowfish.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		64A706411CD1455D002E9B99 /* Blowfish.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* Blowfish.c */; settings = {COMPILER_FLAGS = "-DCIPHER_BLOWFISH_AS_DYNAMIC -DCIPHER_BLOWFISH_BUILD_MODULE_ABI"; }; };
+		6428A5771AAFC72900634F5D /* Blowfish.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* Blowfish.c */; settings = {COMPILER_FLAGS = "-DCIPHER_BLOWFISH_DYNAMIC"; }; };
+		64A706411CD1455D002E9B99 /* Blowfish.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* Blowfish.c */; settings = {COMPILER_FLAGS = "-DCIPHER_BLOWFISH_DYNAMIC -DCIPHER_BLOWFISH_BUILD_MODULE_ABI"; }; };
 		64A706441CD1455D002E9B99 /* Blowfish.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* Blowfish.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		64A7064B1CD14570002E9B99 /* Blowfish.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* Blowfish.c */; settings = {COMPILER_FLAGS = "-DCIPHER_BLOWFISH_BUILD_ABI"; }; };
 		64A706541CD1457A002E9B99 /* Blowfish.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* Blowfish.c */; settings = {COMPILER_FLAGS = "-DCIPHER_BLOWFISH_BUILD_ABI -DCIPHER_BLOWFISH_HIDE_API"; }; };
@@ -26,7 +24,6 @@
 		6428A5741AAFC6DF00634F5D /* Blowfish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Blowfish.h; sourceTree = "<group>"; };
 		6428A5761AAFC72900634F5D /* Blowfish.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Blowfish.c; sourceTree = "<group>"; };
 		6428A57C1AAFEDED00634F5D /* libBlowfishCipher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBlowfishCipher.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		64A7063E1CD14554002E9B99 /* libBlowfishCipher.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libBlowfishCipher.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		64A706481CD1455D002E9B99 /* Blowfish.Cipher */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = Blowfish.Cipher; sourceTree = BUILT_PRODUCTS_DIR; };
 		64A706511CD14570002E9B99 /* libBlowfishCipher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBlowfishCipher.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		64A7065A1CD1457A002E9B99 /* libBlowfishCipher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBlowfishCipher.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,13 +38,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		6428A5791AAFEDED00634F5D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		64A706381CD14554002E9B99 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -92,7 +82,6 @@
 			children = (
 				6428A5691AAFC68700634F5D /* libBlowfishCipher.dylib */,
 				6428A57C1AAFEDED00634F5D /* libBlowfishCipher.a */,
-				64A7063E1CD14554002E9B99 /* libBlowfishCipher.dylib */,
 				64A706481CD1455D002E9B99 /* Blowfish.Cipher */,
 				64A706511CD14570002E9B99 /* libBlowfishCipher.a */,
 				64A7065A1CD1457A002E9B99 /* libBlowfishCipher.a */,
@@ -134,14 +123,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				64A707001CD293BE002E9B99 /* Blowfish.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		64A706391CD14554002E9B99 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				64A7063A1CD14554002E9B99 /* Blowfish.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,23 +186,6 @@
 			productName = "Z80-Static";
 			productReference = 6428A57C1AAFEDED00634F5D /* libBlowfishCipher.a */;
 			productType = "com.apple.product-type.library.static";
-		};
-		64A706351CD14554002E9B99 /* BlowfishCipher (dynamic +ABI) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 64A7063B1CD14554002E9B99 /* Build configuration list for PBXNativeTarget "BlowfishCipher (dynamic +ABI)" */;
-			buildPhases = (
-				64A706361CD14554002E9B99 /* Sources */,
-				64A706381CD14554002E9B99 /* Frameworks */,
-				64A706391CD14554002E9B99 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "BlowfishCipher (dynamic +ABI)";
-			productName = Z80;
-			productReference = 64A7063E1CD14554002E9B99 /* libBlowfishCipher.dylib */;
-			productType = "com.apple.product-type.library.dynamic";
 		};
 		64A7063F1CD1455D002E9B99 /* Blowfish (module) */ = {
 			isa = PBXNativeTarget;
@@ -304,7 +268,6 @@
 			projectRoot = "";
 			targets = (
 				6428A5681AAFC68700634F5D /* BlowfishCipher (dynamic) */,
-				64A706351CD14554002E9B99 /* BlowfishCipher (dynamic +ABI) */,
 				64A7063F1CD1455D002E9B99 /* Blowfish (module) */,
 				6428A57B1AAFEDED00634F5D /* BlowfishCipher (static) */,
 				64A706491CD14570002E9B99 /* BlowfishCipher (static +ABI) */,
@@ -327,14 +290,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				64A7065B1CD14D97002E9B99 /* Blowfish.c in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		64A706361CD14554002E9B99 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				64A706371CD14554002E9B99 /* Blowfish.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,28 +439,6 @@
 			};
 			name = Release;
 		};
-		64A7063C1CD14554002E9B99 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1.0.0;
-				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = BlowfishCipher;
-				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/cipher;
-			};
-			name = Debug;
-		};
-		64A7063D1CD14554002E9B99 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1.0.0;
-				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = BlowfishCipher;
-				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/cipher;
-			};
-			name = Release;
-		};
 		64A706461CD1455D002E9B99 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -588,15 +521,6 @@
 			buildConfigurations = (
 				6428A57E1AAFEDED00634F5D /* Debug */,
 				6428A57F1AAFEDED00634F5D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		64A7063B1CD14554002E9B99 /* Build configuration list for PBXNativeTarget "BlowfishCipher (dynamic +ABI)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				64A7063C1CD14554002E9B99 /* Debug */,
-				64A7063D1CD14554002E9B99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

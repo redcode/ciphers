@@ -8,11 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6428A5751AAFC6DF00634F5D /* SEED.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* SEED.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6428A5771AAFC72900634F5D /* SEED.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* SEED.c */; settings = {COMPILER_FLAGS = "-DCIPHER_SEED_AS_DYNAMIC"; }; };
+		6428A5771AAFC72900634F5D /* SEED.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* SEED.c */; settings = {COMPILER_FLAGS = "-DCIPHER_SEED_DYNAMIC"; }; };
 		6428A5801AAFEF1D00634F5D /* SEED.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* SEED.c */; };
-		64A706AA1CD272A4002E9B99 /* SEED.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* SEED.c */; settings = {COMPILER_FLAGS = "-DCIPHER_SEED_AS_DYNAMIC -DCIPHER_SEED_BUILD_ABI"; }; };
-		64A706AD1CD272A4002E9B99 /* SEED.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* SEED.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		64A706B41CD27303002E9B99 /* SEED.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* SEED.c */; settings = {COMPILER_FLAGS = "-DCIPHER_SEED_AS_DYNAMIC -DCIPHER_SEED_BUILD_MODULE_ABI"; }; };
+		64A706B41CD27303002E9B99 /* SEED.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* SEED.c */; settings = {COMPILER_FLAGS = "-DCIPHER_SEED_DYNAMIC -DCIPHER_SEED_BUILD_MODULE_ABI"; }; };
 		64A706B71CD27303002E9B99 /* SEED.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* SEED.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		64A706BE1CD27319002E9B99 /* SEED.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* SEED.c */; settings = {COMPILER_FLAGS = "-DCIPHER_SEED_BUILD_ABI"; }; };
 		64A706C71CD27322002E9B99 /* SEED.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* SEED.c */; settings = {COMPILER_FLAGS = "-DCIPHER_SEED_BUILD_ABI -DCIPHER_SEED_HIDE_API"; }; };
@@ -26,7 +24,6 @@
 		6428A5741AAFC6DF00634F5D /* SEED.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEED.h; sourceTree = "<group>"; };
 		6428A5761AAFC72900634F5D /* SEED.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SEED.c; sourceTree = "<group>"; };
 		6428A57C1AAFEDED00634F5D /* libSEEDCipher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSEEDCipher.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		64A706B11CD272A4002E9B99 /* libSEEDCipher.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libSEEDCipher.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		64A706BB1CD27303002E9B99 /* SEED.Cipher */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = SEED.Cipher; sourceTree = BUILT_PRODUCTS_DIR; };
 		64A706C41CD27319002E9B99 /* libSEEDCipher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSEEDCipher.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		64A706CD1CD27322002E9B99 /* libSEEDCipher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSEEDCipher.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,13 +38,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		6428A5791AAFEDED00634F5D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		64A706AB1CD272A4002E9B99 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -92,7 +82,6 @@
 			children = (
 				6428A5691AAFC68700634F5D /* libSEEDCipher.dylib */,
 				6428A57C1AAFEDED00634F5D /* libSEEDCipher.a */,
-				64A706B11CD272A4002E9B99 /* libSEEDCipher.dylib */,
 				64A706BB1CD27303002E9B99 /* SEED.Cipher */,
 				64A706C41CD27319002E9B99 /* libSEEDCipher.a */,
 				64A706CD1CD27322002E9B99 /* libSEEDCipher.a */,
@@ -134,14 +123,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				64A707091CD29457002E9B99 /* SEED.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		64A706AC1CD272A4002E9B99 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				64A706AD1CD272A4002E9B99 /* SEED.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,23 +186,6 @@
 			productName = "Z80-Static";
 			productReference = 6428A57C1AAFEDED00634F5D /* libSEEDCipher.a */;
 			productType = "com.apple.product-type.library.static";
-		};
-		64A706A81CD272A4002E9B99 /* SEEDCipher (dynamic +ABI) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 64A706AE1CD272A4002E9B99 /* Build configuration list for PBXNativeTarget "SEEDCipher (dynamic +ABI)" */;
-			buildPhases = (
-				64A706A91CD272A4002E9B99 /* Sources */,
-				64A706AB1CD272A4002E9B99 /* Frameworks */,
-				64A706AC1CD272A4002E9B99 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "SEEDCipher (dynamic +ABI)";
-			productName = Z80;
-			productReference = 64A706B11CD272A4002E9B99 /* libSEEDCipher.dylib */;
-			productType = "com.apple.product-type.library.dynamic";
 		};
 		64A706B21CD27303002E9B99 /* SEED (module) */ = {
 			isa = PBXNativeTarget;
@@ -304,7 +268,6 @@
 			projectRoot = "";
 			targets = (
 				6428A5681AAFC68700634F5D /* SEEDCipher (dynamic) */,
-				64A706A81CD272A4002E9B99 /* SEEDCipher (dynamic +ABI) */,
 				64A706B21CD27303002E9B99 /* SEED (module) */,
 				6428A57B1AAFEDED00634F5D /* SEEDCipher (static) */,
 				64A706BC1CD27319002E9B99 /* SEEDCipher (static +ABI) */,
@@ -327,14 +290,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6428A5801AAFEF1D00634F5D /* SEED.c in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		64A706A91CD272A4002E9B99 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				64A706AA1CD272A4002E9B99 /* SEED.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,28 +441,6 @@
 			};
 			name = Release;
 		};
-		64A706AF1CD272A4002E9B99 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1.0.0;
-				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = SEEDCipher;
-				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/cipher;
-			};
-			name = Debug;
-		};
-		64A706B01CD272A4002E9B99 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1.0.0;
-				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = SEEDCipher;
-				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/cipher;
-			};
-			name = Release;
-		};
 		64A706B91CD27303002E9B99 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -590,15 +523,6 @@
 			buildConfigurations = (
 				6428A57E1AAFEDED00634F5D /* Debug */,
 				6428A57F1AAFEDED00634F5D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		64A706AE1CD272A4002E9B99 /* Build configuration list for PBXNativeTarget "SEEDCipher (dynamic +ABI)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				64A706AF1CD272A4002E9B99 /* Debug */,
-				64A706B01CD272A4002E9B99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

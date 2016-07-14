@@ -25,7 +25,7 @@ typedef struct {
 Z_C_SYMBOLS_BEGIN
 
 #ifndef CIPHER_ARC4_ABI
-#	ifdef CIPHER_ARC4_AS_STATIC
+#	ifdef CIPHER_ARC4_STATIC
 #		define CIPHER_ARC4_ABI
 #	else
 #		define CIPHER_ARC4_ABI Z_API
@@ -37,7 +37,7 @@ CIPHER_ARC4_ABI extern ZCipherABI const abi_cipher_arc4;
 #ifndef CIPHER_ARC4_OMIT_FUNCTION_PROTOTYPES
 
 #	ifndef CIPHER_ARC4_API
-#		ifdef CIPHER_ARC4_AS_STATIC
+#		ifdef CIPHER_ARC4_STATIC
 #			define CIPHER_ARC4_API
 #		else
 #			define CIPHER_ARC4_API Z_API

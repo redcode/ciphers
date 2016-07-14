@@ -39,17 +39,19 @@ Copyright © 2006 Red Hat, Inc.
 Copyright © 2011-2016 Manuel Sainz de Baranda y Goñi.
 Re-released under the terms of the GNU Lesser General Public License v3. */
 
-#if defined(CIPHER_F_CRYPT_HIDE_API)
+#define DEFINED(WHAT) (defined CIPHER_F_CRYPT_##WHAT)
+
+#if DEFINED(HIDE_API)
 #	define CIPHER_F_CRYPT_API static
-#elif defined(CIPHER_F_CRYPT_AS_DYNAMIC)
+#elif DEFINED(DYNAMIC)
 #	define CIPHER_F_CRYPT_API Z_API_EXPORT
 #else
 #	define CIPHER_F_CRYPT_API
 #endif
 
-#if defined(CIPHER_F_CRYPT_HIDE_ABI)
+#if DEFINED(HIDE_ABI)
 #	define CIPHER_F_CRYPT_ABI static
-#elif defined(CIPHER_F_CRYPT_AS_DYNAMIC)
+#elif DEFINED(DYNAMIC)
 #	define CIPHER_F_CRYPT_ABI Z_API_EXPORT
 #else
 #	define CIPHER_F_CRYPT_ABI
@@ -57,7 +59,7 @@ Re-released under the terms of the GNU Lesser General Public License v3. */
 
 #define CIPHER_F_CRYPT_OMIT_FUNCTION_PROTOTYPES
 
-#ifdef CIPHER_F_CRYPT_USE_LOCAL_HEADER
+#if DEFINED(USE_LOCAL_HEADER)
 #	include "FCrypt.h"
 #else
 #	include <cipher/FCrypt.h>
@@ -403,7 +405,7 @@ void f_crypt_decipher(FCrypt *object, Z64Bit const *block, zsize block_size, Z64
 	}
 
 
-#if defined(CIPHER_F_CRYPT_BUILD_ABI) || defined(CIPHER_F_CRYPT_BUILD_MODULE_ABI)
+#if DEFINED(BUILD_ABI) || DEFINED(BUILD_MODULE_ABI)
 
 	CIPHER_F_CRYPT_ABI ZCipherABI const abi_cipher_f_crypt = {
 		/* test_key		 */ NULL,
@@ -423,7 +425,7 @@ void f_crypt_decipher(FCrypt *object, Z64Bit const *block, zsize block_size, Z64
 
 #endif
 
-#ifdef CIPHER_F_CRYPT_BUILD_MODULE_ABI
+#if DEFINED(BUILD_MODULE_ABI)
 
 #	include <Z/ABIs/generic/module.h>
 
@@ -434,7 +436,7 @@ void f_crypt_decipher(FCrypt *object, Z64Bit const *block, zsize block_size, Z64
 		"LLGPLv3";
 
 	static ZModuleUnit const unit = {
-		"FCrypt", Z_VERSION(1, 0, 0), information, &abi_cipher_f_crypt
+		"FCrypt", "FCrypt", Z_VERSION(1, 0, 0), information, &abi_cipher_f_crypt
 	};
 
 	static ZModuleDomain const domain = {"cipher", Z_VERSION(1, 0, 0), 1, &unit};

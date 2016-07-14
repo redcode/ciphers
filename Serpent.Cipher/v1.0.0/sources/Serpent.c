@@ -9,17 +9,19 @@ Copyright © 2004 Jesús García Hernández.
 Copyright © 2011-2016 Manuel Sainz de Baranda y Goñi.
 Released under the terms of the GNU Lesser General Public License v3. */
 
-#if defined(CIPHER_SERPENT_HIDE_API)
+#define DEFINED(WHAT) (defined CIPHER_SERPENT_##WHAT)
+
+#if DEFINED(HIDE_API)
 #	define CIPHER_SERPENT_API static
-#elif defined(CIPHER_SERPENT_AS_DYNAMIC)
+#elif DEFINED(DYNAMIC)
 #	define CIPHER_SERPENT_API Z_API_EXPORT
 #else
 #	define CIPHER_SERPENT_API
 #endif
 
-#if defined(CIPHER_SERPENT_HIDE_ABI)
+#if DEFINED(HIDE_ABI)
 #	define CIPHER_SERPENT_ABI static
-#elif defined(CIPHER_SERPENT_AS_DYNAMIC)
+#elif DEFINED(DYNAMIC)
 #	define CIPHER_SERPENT_ABI Z_API_EXPORT
 #else
 #	define CIPHER_SERPENT_ABI
@@ -27,7 +29,7 @@ Released under the terms of the GNU Lesser General Public License v3. */
 
 #define CIPHER_SERPENT_OMIT_FUNCTION_PROTOTYPES
 
-#ifdef CIPHER_SERPENT_USE_LOCAL_HEADER
+#if DEFINED(USE_LOCAL_HEADER)
 #	include "Serpent.h"
 #else
 #	include <cipher/Serpent.h>
@@ -36,8 +38,8 @@ Released under the terms of the GNU Lesser General Public License v3. */
 #include <Z/functions/base/value.h>
 
 #define PHI Z_UINT32(0x9E3779B9)
-#define ROL z_uint32_rotated_left
-#define ROR z_uint32_rotated_right
+#define ROL z_uint32_rotate_left
+#define ROR z_uint32_rotate_right
 
 #define KI(a, b, c, d, i, j) \
 	b ^= d; b ^= c; b ^= a; b ^= PHI ^ i; b = ROL(b, 11); k[j] = b;
@@ -427,12 +429,8 @@ CIPHER_SERPENT_API void serpent_set_key(Serpent *object, const zuint8 *key, zsiz
 	}
 
 
-CIPHER_SERPENT_API void serpent_encipher(
-	Serpent*       object,
-	zuint32 const* block,
-	zsize	       block_size,
-	zuint32*       output
-)
+CIPHER_SERPENT_API
+void serpent_encipher(Serpent *object, zuint32 const *block, zsize block_size, zuint32 *output)
 	{
 	zuint32 const *k = object->k;
 	zuint32	r0, r1, r2, r3, r4;
@@ -486,12 +484,8 @@ CIPHER_SERPENT_API void serpent_encipher(
 	}
 
 
-CIPHER_SERPENT_API void serpent_decipher(
-	Serpent*       object,
-	zuint32 const* block,
-	zsize	       block_size,
-	zuint32*       output
-)
+CIPHER_SERPENT_API
+void serpent_decipher(Serpent *object, zuint32 const *block, zsize block_size, zuint32 *output)
 	{
 	const zuint32 *k = object->k;
 	zuint32	r0, r1, r2, r3, r4;
@@ -545,7 +539,7 @@ CIPHER_SERPENT_API void serpent_decipher(
 	}
 
 
-#if defined(CIPHER_SERPENT_BUILD_ABI) || defined(CIPHER_SERPENT_BUILD_MODULE_ABI)
+#if DEFINED(BUILD_ABI) || DEFINED(BUILD_MODULE_ABI)
 
 	CIPHER_SERPENT_ABI ZCipherABI const abi_cipher_serpent = {
 		/* test_key		 */ NULL,
@@ -565,7 +559,7 @@ CIPHER_SERPENT_API void serpent_decipher(
 
 #endif
 
-#ifdef CIPHER_SERPENT_BUILD_MODULE_ABI
+#if DEFINED(BUILD_MODULE_ABI)
 
 #	include <Z/ABIs/generic/module.h>
 
@@ -577,7 +571,7 @@ CIPHER_SERPENT_API void serpent_decipher(
 		"LLGPLv3";
 
 	static ZModuleUnit const unit = {
-		"Serpent", Z_VERSION(1, 0, 0), information, &abi_cipher_serpent
+		"Serpent", "Serpent", Z_VERSION(1, 0, 0), information, &abi_cipher_serpent
 	};
 
 	static ZModuleDomain const domain = {"cipher", Z_VERSION(1, 0, 0), 1, &unit};

@@ -28,7 +28,7 @@ typedef struct {
 Z_C_SYMBOLS_BEGIN
 
 #ifndef CIPHER_ANUBIS_ABI
-#	ifdef CIPHER_ANUBIS_AS_STATIC
+#	ifdef CIPHER_ANUBIS_STATIC
 #		define CIPHER_ANUBIS_ABI
 #	else
 #		define CIPHER_ANUBIS_ABI Z_API
@@ -41,7 +41,7 @@ CIPHER_ANUBIS_ABI extern ZCipherABI const abi_cipher_anubis;
 #ifndef CIPHER_ANUBIS_OMIT_FUNCTION_PROTOTYPES
 
 #	ifndef CIPHER_ANUBIS_API
-#		ifdef CIPHER_ANUBIS_AS_STATIC
+#		ifdef CIPHER_ANUBIS_STATIC
 #			define CIPHER_ANUBIS_API
 #		else
 #			define CIPHER_ANUBIS_API Z_API

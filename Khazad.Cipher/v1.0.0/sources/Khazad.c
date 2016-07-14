@@ -9,17 +9,19 @@ Copyright © 2004 Aaron Grothe.
 Copyright © 2011-2016 Manuel Sainz de Baranda y Goñi.
 Released under the terms of the GNU Lesser General Public License v3. */
 
-#if defined(CIPHER_KHAZAD_HIDE_API)
+#define DEFINED(WHAT) (defined CIPHER_KHAZAD_##WHAT)
+
+#if DEFINED(HIDE_API)
 #	define CIPHER_KHAZAD_API static
-#elif defined(CIPHER_KHAZAD_AS_DYNAMIC)
+#elif DEFINED(DYNAMIC)
 #	define CIPHER_KHAZAD_API Z_API_EXPORT
 #else
 #	define CIPHER_KHAZAD_API
 #endif
 
-#if defined(CIPHER_KHAZAD_HIDE_ABI)
+#if DEFINED(HIDE_ABI)
 #	define CIPHER_KHAZAD_ABI static
-#elif defined(CIPHER_KHAZAD_AS_DYNAMIC)
+#elif DEFINED(DYNAMIC)
 #	define CIPHER_KHAZAD_ABI Z_API_EXPORT
 #else
 #	define CIPHER_KHAZAD_ABI
@@ -27,7 +29,7 @@ Released under the terms of the GNU Lesser General Public License v3. */
 
 #define CIPHER_KHAZAD_OMIT_FUNCTION_PROTOTYPES
 
-#ifdef CIPHER_KHAZAD_USE_LOCAL_HEADER
+#if DEFINED(USE_LOCAL_HEADER)
 #	include "Khazad.h"
 #else
 #	include <cipher/Khazad.h>
@@ -676,25 +678,17 @@ static void cipher(
 	}
 
 
-CIPHER_KHAZAD_API void khazad_encipher(
-	Khazad*	       object,
-	zuint64 const* block,
-	zsize	       block_size,
-	zuint64*       output
-)
+CIPHER_KHAZAD_API
+void khazad_encipher(Khazad *object, zuint64 const *block, zsize block_size, zuint64 *output)
 	{cipher(object->e, block, block_size, output);}
 
 
-CIPHER_KHAZAD_API void khazad_decipher(
-	Khazad*	       object,
-	zuint64 const* block,
-	zsize	       block_size,
-	zuint64*       output
-)
+CIPHER_KHAZAD_API
+void khazad_decipher(Khazad *object, zuint64 const *block, zsize block_size, zuint64 *output)
 	{cipher(object->d, block, block_size, output);}
 
 
-#if defined(CIPHER_KHAZAD_BUILD_ABI) || defined(CIPHER_KHAZAD_BUILD_MODULE_ABI)
+#if DEFINED(BUILD_ABI) || DEFINED(BUILD_MODULE_ABI)
 
 	CIPHER_KHAZAD_ABI ZCipherABI const abi_cipher_khazad = {
 		/* test_key		 */ NULL,
@@ -714,7 +708,7 @@ CIPHER_KHAZAD_API void khazad_decipher(
 
 #endif
 
-#ifdef CIPHER_KHAZAD_BUILD_MODULE_ABI
+#if DEFINED(BUILD_MODULE_ABI)
 
 #	include <Z/ABIs/generic/module.h>
 
@@ -726,7 +720,7 @@ CIPHER_KHAZAD_API void khazad_decipher(
 		"LLGPLv3";
 
 	static ZModuleUnit const unit = {
-		"Khazad", Z_VERSION(1, 0, 0), information, &abi_cipher_khazad
+		"Khazad", "Khazad", Z_VERSION(1, 0, 0), information, &abi_cipher_khazad
 	};
 
 	static ZModuleDomain const domain = {"cipher", Z_VERSION(1, 0, 0), 1, &unit};

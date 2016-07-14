@@ -25,7 +25,7 @@ typedef struct {
 Z_C_SYMBOLS_BEGIN
 
 #ifndef CIPHER_KHAZAD_ABI
-#	ifdef CIPHER_KHAZAD_AS_STATIC
+#	ifdef CIPHER_KHAZAD_STATIC
 #		define CIPHER_KHAZAD_ABI
 #	else
 #		define CIPHER_KHAZAD_ABI Z_API
@@ -37,7 +37,7 @@ CIPHER_KHAZAD_ABI extern ZCipherABI const abi_cipher_khazad;
 #ifndef CIPHER_KHAZAD_OMIT_FUNCTION_PROTOTYPES
 
 #	ifndef CIPHER_KHAZAD_API
-#		ifdef CIPHER_KHAZAD_AS_STATIC
+#		ifdef CIPHER_KHAZAD_STATIC
 #			define CIPHER_KHAZAD_API
 #		else
 #			define CIPHER_KHAZAD_API Z_API

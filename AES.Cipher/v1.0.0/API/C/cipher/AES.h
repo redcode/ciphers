@@ -67,7 +67,7 @@ typedef struct {
 Z_C_SYMBOLS_BEGIN
 
 #ifndef CIPHER_AES_ABI
-#	ifdef CIPHER_AES_AS_STATIC
+#	ifdef CIPHER_AES_STATIC
 #		define CIPHER_AES_ABI
 #	else
 #		define CIPHER_AES_ABI Z_API
@@ -81,7 +81,7 @@ CIPHER_AES_ABI extern ZCipherABI const abi_cipher_aes_256;
 #ifndef CIPHER_AES_OMIT_FUNCTION_PROTOTYPES
 
 #	ifndef CIPHER_AES_API
-#		ifdef CIPHER_AES_AS_STATIC
+#		ifdef CIPHER_AES_STATIC
 #			define CIPHER_AES_API
 #		else
 #			define CIPHER_AES_API Z_API

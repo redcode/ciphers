@@ -7,17 +7,19 @@ Copyright © 1997 Paul Kocher.
 Copyright © 2009-2016 Manuel Sainz de Baranda y Goñi.
 Released under the terms of the GNU Lesser General Public License v3. */
 
-#if defined(CIPHER_BLOWFISH_HIDE_API)
+#define DEFINED(WHAT) (defined CIPHER_BLOWFISH_##WHAT)
+
+#if DEFINED(HIDE_API)
 #	define CIPHER_BLOWFISH_API static
-#elif defined(CIPHER_BLOWFISH_AS_DYNAMIC)
+#elif DEFINED(DYNAMIC)
 #	define CIPHER_BLOWFISH_API Z_API_EXPORT
 #else
 #	define CIPHER_BLOWFISH_API
 #endif
 
-#if defined(CIPHER_BLOWFISH_HIDE_ABI)
+#if DEFINED(HIDE_ABI)
 #	define CIPHER_BLOWFISH_ABI static
-#elif defined(CIPHER_BLOWFISH_AS_DYNAMIC)
+#elif DEFINED(DYNAMIC)
 #	define CIPHER_BLOWFISH_ABI Z_API_EXPORT
 #else
 #	define CIPHER_BLOWFISH_ABI
@@ -25,7 +27,7 @@ Released under the terms of the GNU Lesser General Public License v3. */
 
 #define CIPHER_BLOWFISH_OMIT_FUNCTION_PROTOTYPES
 
-#ifdef CIPHER_BLOWFISH_USE_LOCAL_HEADER
+#if DEFINED(USE_LOCAL_HEADER)
 #	include "Blowfish.h"
 #else
 #	include <cipher/Blowfish.h>
@@ -403,7 +405,7 @@ CIPHER_BLOWFISH_API void blowfish_set_key(Blowfish *object, zuint8 const *key, z
 	}
 
 
-#if defined(CIPHER_BLOWFISH_BUILD_ABI) || defined(CIPHER_BLOWFISH_BUILD_MODULE_ABI)
+#if DEFINED(BUILD_ABI) || DEFINED(BUILD_MODULE_ABI)
 
 	CIPHER_BLOWFISH_ABI ZCipherABI const abi_cipher_blowfish = {
 		/* test_key		 */ NULL,
@@ -423,7 +425,7 @@ CIPHER_BLOWFISH_API void blowfish_set_key(Blowfish *object, zuint8 const *key, z
 
 #endif
 
-#ifdef CIPHER_BLOWFISH_BUILD_MODULE_ABI
+#if DEFINED(BUILD_MODULE_ABI)
 
 #	include <Z/ABIs/generic/module.h>
 
@@ -433,7 +435,7 @@ CIPHER_BLOWFISH_API void blowfish_set_key(Blowfish *object, zuint8 const *key, z
 		"LLGPLv3";
 
 	static ZModuleUnit const unit = {
-		"Blowfish", Z_VERSION(1, 0, 0), information, &abi_cipher_blowfish,
+		"Blowfish", "Blowfish", Z_VERSION(1, 0, 0), information, &abi_cipher_blowfish,
 	};
 
 	static ZModuleDomain const domain = {"cipher", Z_VERSION(1, 0, 0), 1, &unit};

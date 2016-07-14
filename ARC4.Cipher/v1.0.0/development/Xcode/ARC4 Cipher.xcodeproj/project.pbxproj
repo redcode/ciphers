@@ -8,11 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6428A5751AAFC6DF00634F5D /* ARC4.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* ARC4.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6428A5771AAFC72900634F5D /* ARC4.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* ARC4.c */; settings = {COMPILER_FLAGS = "-DCIPHER_ARC4_AS_DYNAMIC"; }; };
+		6428A5771AAFC72900634F5D /* ARC4.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* ARC4.c */; settings = {COMPILER_FLAGS = "-DCIPHER_ARC4_DYNAMIC"; }; };
 		6428A5801AAFEF1D00634F5D /* ARC4.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* ARC4.c */; };
-		64A705EB1CD0CBF6002E9B99 /* ARC4.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* ARC4.c */; settings = {COMPILER_FLAGS = "-DCIPHER_ARC4_AS_DYNAMIC -DCIPHER_ARC4_BUILD_ABI"; }; };
-		64A705EE1CD0CBF6002E9B99 /* ARC4.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* ARC4.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		64A705F51CD0CBF8002E9B99 /* ARC4.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* ARC4.c */; settings = {COMPILER_FLAGS = "-DCIPHER_ARC4_AS_DYNAMIC -DCIPHER_ARC4_BUILD_MODULE_ABI"; }; };
+		64A705F51CD0CBF8002E9B99 /* ARC4.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* ARC4.c */; settings = {COMPILER_FLAGS = "-DCIPHER_ARC4_DYNAMIC -DCIPHER_ARC4_BUILD_MODULE_ABI"; }; };
 		64A705F81CD0CBF8002E9B99 /* ARC4.h in Headers */ = {isa = PBXBuildFile; fileRef = 6428A5741AAFC6DF00634F5D /* ARC4.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		64A705FF1CD0CC37002E9B99 /* ARC4.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* ARC4.c */; settings = {COMPILER_FLAGS = "-DCIPHER_ARC4_BUILD_ABI"; }; };
 		64A706081CD0CC3A002E9B99 /* ARC4.c in Sources */ = {isa = PBXBuildFile; fileRef = 6428A5761AAFC72900634F5D /* ARC4.c */; settings = {COMPILER_FLAGS = "-DCIPHER_ARC4_BUILD_ABI -DCIPHER_ARC4_HIDE_API"; }; };
@@ -26,7 +24,6 @@
 		6428A5741AAFC6DF00634F5D /* ARC4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARC4.h; sourceTree = "<group>"; };
 		6428A5761AAFC72900634F5D /* ARC4.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ARC4.c; sourceTree = "<group>"; };
 		6428A57C1AAFEDED00634F5D /* libARC4Cipher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libARC4Cipher.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		64A705F21CD0CBF6002E9B99 /* libARC4Cipher.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libARC4Cipher.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		64A705FC1CD0CBF8002E9B99 /* ARC4.Cipher */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ARC4.Cipher; sourceTree = BUILT_PRODUCTS_DIR; };
 		64A706051CD0CC37002E9B99 /* libARC4Cipher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libARC4Cipher.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		64A7060E1CD0CC3A002E9B99 /* libARC4Cipher.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libARC4Cipher.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,13 +38,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		6428A5791AAFEDED00634F5D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		64A705EC1CD0CBF6002E9B99 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -92,7 +82,6 @@
 			children = (
 				6428A5691AAFC68700634F5D /* libARC4Cipher.dylib */,
 				6428A57C1AAFEDED00634F5D /* libARC4Cipher.a */,
-				64A705F21CD0CBF6002E9B99 /* libARC4Cipher.dylib */,
 				64A705FC1CD0CBF8002E9B99 /* ARC4.Cipher */,
 				64A706051CD0CC37002E9B99 /* libARC4Cipher.a */,
 				64A7060E1CD0CC3A002E9B99 /* libARC4Cipher.a */,
@@ -134,14 +123,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				64A706FD1CD2939A002E9B99 /* ARC4.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		64A705ED1CD0CBF6002E9B99 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				64A705EE1CD0CBF6002E9B99 /* ARC4.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,23 +186,6 @@
 			productName = "Z80-Static";
 			productReference = 6428A57C1AAFEDED00634F5D /* libARC4Cipher.a */;
 			productType = "com.apple.product-type.library.static";
-		};
-		64A705E91CD0CBF6002E9B99 /* ARC4Cipher (dynamic +ABI) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 64A705EF1CD0CBF6002E9B99 /* Build configuration list for PBXNativeTarget "ARC4Cipher (dynamic +ABI)" */;
-			buildPhases = (
-				64A705EA1CD0CBF6002E9B99 /* Sources */,
-				64A705EC1CD0CBF6002E9B99 /* Frameworks */,
-				64A705ED1CD0CBF6002E9B99 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "ARC4Cipher (dynamic +ABI)";
-			productName = Z80;
-			productReference = 64A705F21CD0CBF6002E9B99 /* libARC4Cipher.dylib */;
-			productType = "com.apple.product-type.library.dynamic";
 		};
 		64A705F31CD0CBF8002E9B99 /* ARC4 (module) */ = {
 			isa = PBXNativeTarget;
@@ -304,7 +268,6 @@
 			projectRoot = "";
 			targets = (
 				6428A5681AAFC68700634F5D /* ARC4Cipher (dynamic) */,
-				64A705E91CD0CBF6002E9B99 /* ARC4Cipher (dynamic +ABI) */,
 				64A705F31CD0CBF8002E9B99 /* ARC4 (module) */,
 				6428A57B1AAFEDED00634F5D /* ARC4Cipher (static) */,
 				64A705FD1CD0CC37002E9B99 /* ARC4Cipher (static +ABI) */,
@@ -327,14 +290,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6428A5801AAFEF1D00634F5D /* ARC4.c in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		64A705EA1CD0CBF6002E9B99 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				64A705EB1CD0CBF6002E9B99 /* ARC4.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,28 +441,6 @@
 			};
 			name = Release;
 		};
-		64A705F01CD0CBF6002E9B99 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1.0.0;
-				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = ARC4Cipher;
-				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/cipher;
-			};
-			name = Debug;
-		};
-		64A705F11CD0CBF6002E9B99 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1.0.0;
-				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = ARC4Cipher;
-				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/cipher;
-			};
-			name = Release;
-		};
 		64A705FA1CD0CBF8002E9B99 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -590,15 +523,6 @@
 			buildConfigurations = (
 				6428A57E1AAFEDED00634F5D /* Debug */,
 				6428A57F1AAFEDED00634F5D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		64A705EF1CD0CBF6002E9B99 /* Build configuration list for PBXNativeTarget "ARC4Cipher (dynamic +ABI)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				64A705F01CD0CBF6002E9B99 /* Debug */,
-				64A705F11CD0CBF6002E9B99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

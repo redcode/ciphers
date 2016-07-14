@@ -9,17 +9,19 @@ Copyright © 2004 Aaron Grothe.
 Copyright © 2011-2016 Manuel Sainz de Baranda y Goñi.
 Released under the terms of the GNU Lesser General Public License v3. */
 
-#if defined(CIPHER_TEA_HIDE_API)
+#define DEFINED(WHAT) (defined CIPHER_TEA_##WHAT)
+
+#if DEFINED(HIDE_API)
 #	define CIPHER_TEA_API static
-#elif defined(CIPHER_TEA_AS_DYNAMIC)
+#elif DEFINED(DYNAMIC)
 #	define CIPHER_TEA_API Z_API_EXPORT
 #else
 #	define CIPHER_TEA_API
 #endif
 
-#if defined(CIPHER_TEA_HIDE_ABI)
+#if DEFINED(HIDE_ABI)
 #	define CIPHER_TEA_ABI static
-#elif defined(CIPHER_TEA_AS_DYNAMIC)
+#elif DEFINED(DYNAMIC)
 #	define CIPHER_TEA_ABI Z_API_EXPORT
 #else
 #	define CIPHER_TEA_ABI
@@ -27,7 +29,7 @@ Released under the terms of the GNU Lesser General Public License v3. */
 
 #define CIPHER_TEA_OMIT_FUNCTION_PROTOTYPES
 
-#ifdef CIPHER_TEA_USE_LOCAL_HEADER
+#if DEFINED(USE_LOCAL_HEADER)
 #	include "TEA.h"
 #else
 #	include <cipher/TEA.h>
@@ -193,7 +195,7 @@ void xeta_decipher(TEA *object, zuint32 const *block, zsize block_size, zuint32 
 	}
 
 
-#if defined(CIPHER_TEA_BUILD_ABI) || defined(CIPHER_TEA_BUILD_MODULE_ABI)
+#if DEFINED(BUILD_ABI) || DEFINED(BUILD_MODULE_ABI)
 
 	CIPHER_TEA_ABI ZCipherABI const abi_cipher_tea = {
 		/* test_key		 */ NULL,
@@ -245,7 +247,7 @@ void xeta_decipher(TEA *object, zuint32 const *block, zsize block_size, zuint32 
 
 #endif
 
-#ifdef CIPHER_TEA_BUILD_MODULE_ABI
+#if DEFINED(BUILD_MODULE_ABI)
 
 #	include <Z/ABIs/generic/module.h>
 
@@ -257,9 +259,9 @@ void xeta_decipher(TEA *object, zuint32 const *block, zsize block_size, zuint32 
 		"LLGPLv3";
 
 	static ZModuleUnit const units[] = {
-		{"TEA",  Z_VERSION(1, 0, 0), information, &abi_cipher_tea },
-		{"XTEA", Z_VERSION(1, 0, 0), information, &abi_cipher_xtea},
-		{"XETA", Z_VERSION(1, 0, 0), information, &abi_cipher_xeta}
+		{"TEA",  "TEA",  Z_VERSION(1, 0, 0), information, &abi_cipher_tea },
+		{"XTEA", "XTEA", Z_VERSION(1, 0, 0), information, &abi_cipher_xtea},
+		{"XETA", "XETA", Z_VERSION(1, 0, 0), information, &abi_cipher_xeta}
 	};
 
 	static ZModuleDomain const domain = {"cipher", Z_VERSION(1, 0, 0), 3, units};
