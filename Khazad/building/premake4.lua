@@ -1,10 +1,10 @@
-solution "Anubis"
+solution "Khazad"
 	configurations {
 		"Release-Dynamic", "Release-Dynamic-Module", "Release-Static", "Release-Static-Module",
 		"Debug-Dynamic", "Debug-Dynamic-Module", "Debug-Static", "Debug-Static-Module"
 	}
 
-	project "Anubis"
+	project "Khazad"
 		language "C"
 		flags {"ExtraWarnings"}
 		files {"../sources/**.c"}
@@ -22,13 +22,13 @@ solution "Anubis"
 			kind "SharedLib"
 
 		configuration "*Dynamic-Module"
-			defines {"CIPHER_ANUBIS_BUILD_MODULE_ABI"}
+			defines {"CIPHER_KHAZAD_BUILD_MODULE_ABI"}
 			targetprefix ""
 			targetextension ".Cipher"
 
 		configuration "*Static*"
 			kind "StaticLib"
-			defines {"CIPHER_ANUBIS_STATIC"}
+			defines {"CIPHER_KHAZAD_STATIC"}
 
 		configuration "*Static-Module"
-			defines {"CIPHER_ANUBIS_BUILD_ABI"}
+			defines {"CIPHER_KHAZAD_BUILD_ABI"}
