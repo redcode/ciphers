@@ -2,7 +2,7 @@
 Copyright (C) David John Wheeler.
 Copyright (C) Roger Michael Needham.
 Copyright (C) 2004 Aaron Grothe.
-Copyright (C) 2011-2016 Manuel Sainz de Baranda y Goñi.
+Copyright (C) 2011-2018 Manuel Sainz de Baranda y Goñi.
 Released under the terms of the GNU Lesser General Public License v3. */
 
 #if defined(CIPHER_TEA_HIDE_API)

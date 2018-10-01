@@ -1,6 +1,6 @@
 /* Blowfish Cipher C API
 Copyright (C) 1997 Paul Kocher.
-Copyright (C) 2009-2016 Manuel Sainz de Baranda y Goñi.
+Copyright (C) 2009-2018 Manuel Sainz de Baranda y Goñi.
 Released under the terms of the GNU Lesser General Public License v3. */
 
 #ifndef __cipher_Blowfish_H__

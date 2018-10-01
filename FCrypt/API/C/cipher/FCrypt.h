@@ -32,7 +32,7 @@ OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 SUCH DAMAGE.
 
 Copyright (C) 2006 Red Hat, Inc.
-Copyright (C) 2011-2016 Manuel Sainz de Baranda y Goñi.
+Copyright (C) 2011-2018 Manuel Sainz de Baranda y Goñi.
 Re-released under the terms of the GNU Lesser General Public License v3. */
 
 #ifndef __cipher_FCrypt_H__

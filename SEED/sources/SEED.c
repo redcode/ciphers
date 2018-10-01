@@ -2,7 +2,7 @@
 Copyright (C) Hye-Shik Chang.
 Copyright (C) Kim Hyun.
 Copyright (C) 2007 Korea Information Security Agency (KISA).
-Copyright (C) 2011-2016 Manuel Sainz de Baranda y Goñi.
+Copyright (C) 2011-2018 Manuel Sainz de Baranda y Goñi.
 Released under the terms of the GNU Lesser General Public License v3. */
 
 #if defined(CIPHER_SEED_HIDE_API)

@@ -1,6 +1,6 @@
 /* ARC4 Cipher C API
 Copyright (C) 2011 Jon Oberheide.
-Copyright (C) 2011-2016 Manuel Sainz de Baranda y Goñi.
+Copyright (C) 2011-2018 Manuel Sainz de Baranda y Goñi.
 Released under the terms of the GNU Lesser General Public License v3. */
 
 #ifndef __cipher_ARC4_H__
