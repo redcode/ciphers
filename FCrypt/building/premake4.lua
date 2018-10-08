@@ -8,7 +8,7 @@ solution "FCrypt"
 		language "C"
 		flags {"ExtraWarnings"}
 		files {"../sources/**.c"}
-		includedirs {"../API/C"}
+		includedirs {"../API"}
 		--buildoptions {"-std=c89 -pedantic -Wall"}
 
 		configuration "Release*"
