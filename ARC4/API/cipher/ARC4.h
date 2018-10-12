@@ -3,8 +3,8 @@ Copyright (C) 2011 Jon Oberheide.
 Copyright (C) 2011-2018 Manuel Sainz de Baranda y Goñi.
 Released under the terms of the GNU Lesser General Public License v3. */
 
-#ifndef __cipher_ARC4_H__
-#define __cipher_ARC4_H__
+#ifndef _cipher_ARC4_H_
+#define _cipher_ARC4_H_
 
 #include <Z/ABIs/generic/cipher.h>
 
@@ -53,4 +53,4 @@ CIPHER_ARC4_ABI extern ZCipherABI const abi_cipher_arc4;
 
 Z_C_SYMBOLS_END
 
-#endif /* __cipher_ARC4_H__ */
+#endif /* _cipher_ARC4_H_ */

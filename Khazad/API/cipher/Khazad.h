@@ -5,8 +5,8 @@ Copyright (C) 2004 Aaron Grothe.
 Copyright (C) 2011-2018 Manuel Sainz de Baranda y Goñi.
 Released under the terms of the GNU Lesser General Public License v3. */
 
-#ifndef __cipher_Khazad_H__
-#define __cipher_Khazad_H__
+#ifndef _cipher_Khazad_H_
+#define _cipher_Khazad_H_
 
 #include <Z/ABIs/generic/cipher.h>
 
@@ -58,4 +58,4 @@ CIPHER_KHAZAD_ABI extern ZCipherABI const abi_cipher_khazad;
 
 Z_C_SYMBOLS_END
 
-#endif /* __cipher_Khazad_H__ */
+#endif /* _cipher_Khazad_H_ */

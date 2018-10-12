@@ -35,8 +35,8 @@ Copyright (C) 2006 Red Hat, Inc.
 Copyright (C) 2011-2018 Manuel Sainz de Baranda y Goñi.
 Re-released under the terms of the GNU Lesser General Public License v3. */
 
-#ifndef __cipher_FCrypt_H__
-#define __cipher_FCrypt_H__
+#ifndef _cipher_FCrypt_H_
+#define _cipher_FCrypt_H_
 
 #include <Z/ABIs/generic/cipher.h>
 
@@ -87,4 +87,4 @@ CIPHER_F_CRYPT_ABI extern ZCipherABI const abi_cipher_f_crypt;
 
 Z_C_SYMBOLS_END
 
-#endif /* __cipher_FCrypt_H__ */
+#endif /* _cipher_FCrypt_H_ */

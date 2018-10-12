@@ -5,8 +5,8 @@ Copyright (C) 2004 Aaron Grothe.
 Copyright (C) 2011-2018 Manuel Sainz de Baranda y Goñi.
 Released under the terms of the GNU Lesser General Public License v3. */
 
-#ifndef __cipher_TEA_H__
-#define __cipher_TEA_H__
+#ifndef _cipher_TEA_H_
+#define _cipher_TEA_H_
 
 #include <Z/ABIs/generic/cipher.h>
 
@@ -77,4 +77,4 @@ CIPHER_TEA_ABI extern ZCipherABI const abi_cipher_xeta;
 
 Z_C_SYMBOLS_END
 
-#endif /* __cipher_TEA_H__ */
+#endif /* _cipher_TEA_H_ */

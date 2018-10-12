@@ -35,8 +35,8 @@ Copyright (C) Adam J. Richter.
 Copyright (C) 2011-2018 Manuel Sainz de Baranda y Goñi.
 Released under the terms of the GNU Lesser General Public License v3. */
 
-#ifndef __cipher_AES_H__
-#define __cipher_AES_H__
+#ifndef _cipher_AES_H_
+#define _cipher_AES_H_
 
 #include <Z/ABIs/generic/cipher.h>
 
@@ -130,4 +130,4 @@ CIPHER_AES_ABI extern ZCipherABI const abi_cipher_aes_256;
 
 Z_C_SYMBOLS_END
 
-#endif /* __cipher_AES_H__ */
+#endif /* _cipher_AES_H_ */

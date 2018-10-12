@@ -3,8 +3,8 @@ Copyright (C) 1997 Paul Kocher.
 Copyright (C) 2009-2018 Manuel Sainz de Baranda y Goñi.
 Released under the terms of the GNU Lesser General Public License v3. */
 
-#ifndef __cipher_Blowfish_H__
-#define __cipher_Blowfish_H__
+#ifndef _cipher_Blowfish_H_
+#define _cipher_Blowfish_H_
 
 #include <Z/ABIs/generic/cipher.h>
 
@@ -60,4 +60,4 @@ CIPHER_BLOWFISH_ABI extern ZCipherABI const abi_cipher_blowfish;
 
 Z_C_SYMBOLS_END
 
-#endif /* __cipher_Blowfish_H__ */
+#endif /* _cipher_Blowfish_H_ */

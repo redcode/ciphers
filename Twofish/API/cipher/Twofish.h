@@ -6,8 +6,8 @@ Copyright (C) Colin Slater.
 Copyright (C) 2011-2018 Manuel Sainz de Baranda y Goñi.
 Released under the terms of the GNU Lesser General Public License v3. */
 
-#ifndef __cipher_Twofish_H__
-#define __cipher_Twofish_H__
+#ifndef _cipher_Twofish_H_
+#define _cipher_Twofish_H_
 
 #include <Z/ABIs/generic/cipher.h>
 
@@ -60,4 +60,4 @@ CIPHER_TWOFISH_ABI extern ZCipherABI const abi_cipher_twofish;
 
 Z_C_SYMBOLS_END
 
-#endif /* __cipher_Twofish_H__ */
+#endif /* _cipher_Twofish_H_ */
