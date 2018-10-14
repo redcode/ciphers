@@ -27,8 +27,6 @@ Released under the terms of the GNU Lesser General Public License v3. */
 #	include <cipher/ARC4.h>
 #endif
 
-#include <Z/functions/base/value.h>
-
 
 CIPHER_ARC4_API
 void arc4_set_key(ARC4 *object, zuint8 const *key, zusize key_size)
